@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <BaseButton />
+    <NavMenu />
   </div>
 </template>
 
 <script>
-import BaseButton from "@/components/Base/BaseButton.vue";
+import NavMenu from "@/components/Navigation/NavMenu.vue";
 
 export default {
   name: "App",
-  components: { BaseButton },
+  components: { NavMenu },
 };
 </script>
 

@@ -30,7 +30,7 @@ export default {
   background-image: url("~@/assets/img/button-border.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     .base-button__shine {
@@ -63,7 +63,7 @@ export default {
     bottom: -73px;
     left: -91px;
     pointer-events: none;
-    transition: all 0.3s;
+    transition: all 0.3s ease-in-out;
   }
 }
 </style>
