@@ -21,7 +21,7 @@ export default {
 .base-button {
   position: relative;
   padding: 25.5px 133px 25.5px 60px;
-  font-family: "Micra", sans-serif;
+  font-family: $font-family-micra;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;

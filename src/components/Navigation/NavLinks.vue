@@ -38,7 +38,6 @@ export default {
     align-items: center;
     min-width: 123px;
     padding: 10px 30px;
-    font-family: "Stem", sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: var(--color-text-grey);

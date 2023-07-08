@@ -1,11 +1,61 @@
 body {
   margin: 0;
   font-weight: 300;
-  font-family: 'Stem', sans-serif;
+  font-family: $font-family-stem;
   //line-height: 1.495;
   color: var(--color-text-white);
   background-color: var(--color-dark-blue);
   -webkit-text-size-adjust: none;
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
+}
+
+.wrap {
+  max-width: 1338px;
+  min-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.title {
+  font-family: $font-family-micra;
+  font-size: 32px;
+  font-weight: 400;
+
+  &_h1 {
+    font-size: 32px;
+    line-height: 1.56;
+  }
+
+  &_h2 {
+    font-size: 42px;
+    line-height: 0.95;
+  }
+}
+
+.colored-el {
+  color: var(--color-light-blue);
+}
+
+.sub-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 350;
+
+  &_medium {
+    font-size: 16px;
+  }
+
+  &_small {
+    font-size: 12px;
+  }
+
+  &_bold {
+    font-weight: 500;
+  }
 }
