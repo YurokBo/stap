@@ -53,7 +53,7 @@ export default {
 
   &_bg {
     background-color: var(--color-dark-blue);
-    box-shadow: 0px 4px 4px rgba(122, 208, 255, 0.7);
+    box-shadow: 0 6px 6px rgba(122, 208, 255, 0.9);
   }
 }
 </style>

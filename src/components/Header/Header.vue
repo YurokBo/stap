@@ -1,7 +1,7 @@
 <template>
   <header class="header">
-    <div class="wrap header-wrap">
-      <div class="header-inner">
+    <div class="wrap header__wrap">
+      <div class="header__inner">
         <HeaderContent />
       </div>
     </div>
@@ -21,7 +21,7 @@ export default {
 .header {
   padding: 111px 0 50px;
 
-  &-inner {
+  &__inner {
     padding: 45px 45px 66px 54px;
     background-image: url("~@/assets/img/header/header-bg.svg");
     background-size: contain;

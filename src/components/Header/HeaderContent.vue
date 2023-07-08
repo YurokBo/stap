@@ -1,12 +1,12 @@
 <template>
   <div class="header-content">
-    <h1 class="title title_h1 header-title">
+    <h1 class="title title_h1 header-content__title">
       <div class="colored-el">Снижение расходов</div>
       компании на операционную <br />деятельность до
       <span class="colored-el">50%</span><br />
       уже через <span class="colored-el">3</span> месяца
     </h1>
-    <p class="sub-title colored-el header-subtitle">
+    <p class="subtitle colored-el header-content__subtitle">
       за счет автоматизации охраны труда
     </p>
     <HeaderCards />
@@ -23,12 +23,12 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
-  &-title {
+.header-content {
+  &__title {
     margin-bottom: 21px;
   }
 
-  &-subtitle {
+  &__subtitle {
     margin-bottom: 45px;
   }
 }

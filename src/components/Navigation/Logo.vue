@@ -1,10 +1,13 @@
 <template>
-  <img src="@/assets/img/icons/logo.svg" alt="stap logo" class="logo" />
+  <BaseIcon name="logo" width="88" height="56" />
 </template>
 
 <script lang="js">
+import BaseIcon from "@/components/Base/BaseIcon.vue";
+
 export default {
   name: "Logo",
+  components: { BaseIcon },
 }
 </script>
 
