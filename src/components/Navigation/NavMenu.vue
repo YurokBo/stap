@@ -1,6 +1,6 @@
 <template>
   <div class="nav-menu" :class="{ 'nav-menu_bg': isScrolled }">
-    <div class="nav-menu__wrap">
+    <div class="wrap nav-menu__wrap">
       <Logo />
       <NavLinks />
     </div>

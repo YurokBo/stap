@@ -3,26 +3,13 @@
     <div class="wrap header__wrap">
       <div class="header__inner">
         <HeaderContent />
-        <img
-          src="@/assets/img/header/hand2.png"
-          alt="hand"
-          class="header__hand"
-        />
-        <img
-          src="@/assets/img/header/vertical-light.svg"
-          alt="light"
-          class="header__vertical-light"
-        />
-        <img
-          src="@/assets/img/header/dust.png"
-          alt="dust"
-          class="header__dust"
-        />
         <HeaderAnimation />
         <img
-          src="@/assets/img/header/ellipse-light.svg"
-          alt="light"
-          class="header__ellipse-light"
+          v-for="(image, i) in images"
+          :key="i"
+          :src="require(`@/assets/img/header/${image.img}`)"
+          :alt="image.alt"
+          :class="image.class"
         />
       </div>
     </div>
@@ -36,12 +23,21 @@ import HeaderAnimation from "@/components/Header/HeaderAnimation.vue";
 export default {
   name: 'Header',
   components: { HeaderAnimation, HeaderContent },
+  data: () => ({
+    images: [
+      {img: 'ufo.png', class: 'header__img-ufo', alt: 'ufo'},
+      {img: 'hand2.png', class: 'header__hand', alt: 'hand2'},
+      {img: 'vertical-light.svg', class: 'header__vertical-light', alt: 'vertical-light'},
+      {img: 'dust.png', class: 'header__dust', alt: 'dust'},
+      {img: 'ellipse-light.svg', class: 'header__ellipse-light', alt: 'ellipse-light'},
+    ]
+  })
 }
 </script>
 
 <style lang="scss">
 .header {
-  padding: 111px 0 50px;
+  padding: 111px 0 82px;
 
   &__inner {
     position: relative;
@@ -79,6 +75,13 @@ export default {
     left: -545px;
     bottom: -400px;
     z-index: -1;
+  }
+
+  &__img-ufo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
   }
 }
 </style>
