@@ -1,5 +1,5 @@
 <template>
-  <button class="base-button">
+  <router-link to="/feedback" class="base-button">
     <span>
       Заказать бесплатную <br />
       диагностику компании
@@ -8,7 +8,7 @@
       <img src="@/assets/img/fingerprint.png" alt="fingerprint" />
     </span>
     <img src="@/assets/img/shine.png" alt="shine" class="base-button__shine" />
-  </button>
+  </router-link>
 </template>
 
 <script lang="js">

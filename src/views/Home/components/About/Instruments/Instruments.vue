@@ -25,7 +25,7 @@
 <script lang="js">
 import BaseLine from "@/components/Base/BaseLine.vue";
 import BaseButton from "@/components/Base/BaseButton.vue";
-import InstrumentsCard from "@/components/About/Instruments/InstrumentsCard.vue";
+import InstrumentsCard from "@/views/Home/components/About/Instruments/InstrumentsCard.vue";
 
 export default {
   name: 'Instruments',

@@ -14,7 +14,7 @@
 </template>
 
 <script lang="js">
-import HeaderCards from "@/components/Header/HeaderCards.vue";
+import HeaderCards from "@/views/Home/components/Header/HeaderCards.vue";
 
 export default {
   name: 'HeaderContent',

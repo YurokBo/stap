@@ -6,7 +6,7 @@
 
 <script lang="js">
 
-import HeaderCard from "@/components/Header/HeaderCard";
+import HeaderCard from "@/views/Home/components/Header/HeaderCard.vue";
 
 export default {
   name: 'HeaderCards',

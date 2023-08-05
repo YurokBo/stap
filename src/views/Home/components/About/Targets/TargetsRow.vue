@@ -3,7 +3,7 @@
     <p class="text text_medium" v-html="textLeft" />
     <img
       src="@/assets/img/icons/arrow-right.svg"
-      alt=""
+      alt="arrow right"
       class="targets-row__arrow"
     />
     <p class="text text_medium text_bold" v-html="textRight" />

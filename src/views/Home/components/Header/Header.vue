@@ -17,8 +17,8 @@
 </template>
 
 <script lang="js">
-import HeaderContent from "@/components/Header/HeaderContent";
-import HeaderAnimation from "@/components/Header/HeaderAnimation.vue";
+import HeaderContent from "@/views/Home/components/Header/HeaderContent.vue";
+import HeaderAnimation from "@/views/Home/components/Header/HeaderAnimation.vue";
 
 export default {
   name: 'Header',
@@ -37,7 +37,7 @@ export default {
 
 <style lang="scss">
 .header {
-  padding: 111px 0 82px;
+  padding: 111px 0 0;
 
   &__inner {
     position: relative;

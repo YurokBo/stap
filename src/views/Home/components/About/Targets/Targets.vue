@@ -23,7 +23,7 @@
 </template>
 
 <script lang="js">
-import TargetsRow from "@/components/About/Targets/TargetsRow.vue";
+import TargetsRow from "@/views/Home/components/About/Targets/TargetsRow.vue";
 import BaseLine from "@/components/Base/BaseLine.vue";
 
 export default {
