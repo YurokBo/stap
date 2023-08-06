@@ -1,13 +1,8 @@
 <template>
   <div class="how-works-card">
     <div class="how-works-card__header">
-      <div class="colored-el how-works-card__header__number">
-        0{{ number }}.
-      </div>
-      <div class="how-works-card__header__period">
-        <img src="@/assets/img/icons/clock.svg" alt="" />
-        <span>{{ period }}</span>
-      </div>
+      <BaseNumber :number="number" />
+      <BasePeriod :text="period" />
     </div>
     <p class="text text_medium how-works-card__text">
       {{ text }}
@@ -39,10 +34,12 @@
 
 <script lang="js">
 import BaseButton from "@/components/Base/BaseButton.vue";
+import BasePeriod from "@/components/Base/BasePeriod.vue";
+import BaseNumber from "@/components/Base/BaseNumber.vue";
 
 export default {
   name: 'HowWorksCard',
-  components: { BaseButton },
+  components: { BaseNumber, BasePeriod, BaseButton },
   props: {
     number: {
       type: Number,
@@ -90,19 +87,6 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-
-    &__number {
-      font-family: $font-family-micra;
-      font-size: 52px;
-      font-weight: 400;
-      line-height: 0.77;
-    }
-
-    &__period {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
   }
 
   &__text {
