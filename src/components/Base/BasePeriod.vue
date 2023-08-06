@@ -1,5 +1,5 @@
 <template>
-  <div class="base-period">
+  <div class="text_medium base-period">
     <img src="@/assets/img/icons/clock.svg" alt="clock" />
     <span>{{ text }}</span>
   </div>
@@ -22,5 +22,8 @@ export default {
   display: flex;
   align-items: center;
   gap: 14px;
+  font-family: $font-family-stem;
+  font-weight: 300;
+  text-transform: initial;
 }
 </style>

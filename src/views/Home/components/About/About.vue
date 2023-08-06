@@ -57,8 +57,8 @@ export default {
 
   &__digits {
     position: absolute;
-    top: -50px;
-    z-index: -1;
+    top: -45px;
+    z-index: -2;
 
     &_left {
       left: 0;

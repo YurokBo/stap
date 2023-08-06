@@ -2,6 +2,7 @@
   <header class="header">
     <div class="wrap header__wrap">
       <div class="header__inner">
+        <img src="@/assets/img/common-header-bg.png" class="header__bg" />
         <HeaderContent />
         <HeaderAnimation />
         <img
@@ -42,10 +43,15 @@ export default {
   &__inner {
     position: relative;
     padding: 45px 45px 66px 54px;
-    background-image: url("~@/assets/img/header/header-bg.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top center;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   &__hand {
@@ -53,7 +59,7 @@ export default {
     z-index: 3;
     width: 653px;
     right: 0;
-    bottom: 5px;
+    bottom: 0;
   }
 
   &__vertical-light {
@@ -61,6 +67,7 @@ export default {
     z-index: 2;
     top: 0;
     right: 0;
+    height: 100%;
   }
 
   &__dust {
@@ -74,7 +81,7 @@ export default {
     position: absolute;
     left: -545px;
     bottom: -400px;
-    z-index: -1;
+    z-index: -2;
   }
 
   &__img-ufo {

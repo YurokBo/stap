@@ -20,7 +20,7 @@ export default {
       return this.number <= 9 ? `0${this.number}` : this.number;
     },
     getSize() {
-      return `base-number_${this.isSize ? 'large' : 'small'}`;
+      return `base-number_${this.isSizeLarge ? 'large' : 'small'}`;
     }
   }
 }
