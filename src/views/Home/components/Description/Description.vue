@@ -7,7 +7,7 @@
     />
     <div class="ellipse-light description__ellipse-light" />
     <div class="wrap description__wrap">
-      <h2 class="title title_h2 colored-el how-works__title">
+      <h2 class="title title_h2 colored-el description__title">
         Для кого подходит ПО АИСОТ?
         <BaseLine
           path="description/divide-line-description"
@@ -138,6 +138,10 @@ export default {
 
   &__wrap {
     position: relative;
+  }
+
+  &__title {
+    margin-bottom: 63px;
   }
 
   &__ellipse-light {
