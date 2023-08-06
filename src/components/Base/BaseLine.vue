@@ -42,6 +42,8 @@ export default {
 
 <style lang="scss">
 .base-line {
+  pointer-events: none;
+
   &__inner {
     position: relative;
   }

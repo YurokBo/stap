@@ -10,7 +10,7 @@ export default {
       type: Number,
       default: 0
     },
-    isSize: {
+    isSizeLarge: {
       type: Boolean,
       default: true,
     }

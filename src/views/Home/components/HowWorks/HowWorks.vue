@@ -6,9 +6,8 @@
         <h2 class="title title_h2 colored-el how-works__title">
           как будем работать
           <BaseLine
-            divide-line="divide-line-how-works"
             path="how-works/divide-line-how-works"
-            class="wrap__divide-line"
+            class="how-works__divide-line"
           />
         </h2>
         <div class="how-works__cards">
