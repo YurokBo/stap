@@ -1,5 +1,11 @@
 <template>
   <section class="description">
+    <img
+      src="@/assets/img/description/hand.png"
+      alt="hand"
+      class="description__hand"
+    />
+    <div class="ellipse-light description__ellipse-light" />
     <div class="wrap description__wrap">
       <h2 class="title title_h2 colored-el how-works__title">
         Для кого подходит ПО АИСОТ?
@@ -36,6 +42,14 @@
           </div>
         </div>
       </div>
+      <div class="description__cards">
+        <DescriptionCard
+          v-for="(text, i) in cards"
+          :key="i"
+          :text="text"
+          :icon="`card${i + 1}`"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -44,10 +58,11 @@
 import BaseLine from "@/components/Base/BaseLine.vue";
 import BaseTabs from "@/components/Base/BaseTabs.vue";
 import BaseNumber from "@/components/Base/BaseNumber.vue";
+import DescriptionCard from "@/views/Home/components/Description/DescriptionCard.vue";
 
 export default {
   name: 'Description',
-  components: { BaseNumber, BaseTabs, BaseLine },
+  components: { DescriptionCard, BaseNumber, BaseTabs, BaseLine },
   data: () => ({
     currentTab: 0,
     show: false,
@@ -102,6 +117,11 @@ export default {
         'Минимизация комплаенс-рисков, штрафов, санкций',
         'Эффективные кросс-функциональные бизнес-процессы',
       ]
+    ],
+    cards: [
+      'От 500 до ∞ <br />сотрудников',
+      'ИП, ООО, ОАО;<br /> 2 и более ЮЛ',
+      'В 1, 2 и более <br />локациях'
     ]
   }),
   methods: {
@@ -114,8 +134,29 @@ export default {
 
 <style lang="scss">
 .description {
+  position: relative;
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__ellipse-light {
+    top: 170px;
+    left: 35%;
+    width: 725px;
+    height: 725px;
+  }
+
+  &__hand {
+    position: absolute;
+    z-index: -1;
+    top: 50px;
+    right: 0;
+  }
+
   &__content {
     display: flex;
+    margin-bottom: 82px;
 
     &__ruler {
       margin-right: 5px;
@@ -163,6 +204,12 @@ export default {
         }
       }
     }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 43px;
   }
 }
 </style>

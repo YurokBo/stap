@@ -67,3 +67,13 @@ body {
     font-weight: 500;
   }
 }
+
+.ellipse-light {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  border: 1px solid var(--color-bg-dark);
+  opacity: 0.2;
+  background: var(--color-bg-ellipse);
+  filter: blur(150px);
+}

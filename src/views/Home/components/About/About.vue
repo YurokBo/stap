@@ -1,6 +1,6 @@
 <template>
   <section class="about">
-    <div class="about__bg" />
+    <div class="ellipse-light about__ellipse-light" />
     <img
       v-for="digit in digits"
       :key="digit"
@@ -40,19 +40,12 @@ export default {
   position: relative;
   padding: 82px 0 44px;
 
-  &__bg {
-    position: absolute;
+  &__ellipse-light {
     top: 283px;
     left: 50%;
-    z-index: -1;
     transform: translateX(-60%);
     width: 945px;
     height: 945px;
-    border-radius: 944.923px;
-    border: 1px solid #000;
-    opacity: 0.2;
-    background: #467792;
-    filter: blur(150px);
   }
 
   &__wrap {
