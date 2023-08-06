@@ -1,23 +1,24 @@
 <template>
   <div class="base-line">
     <div class="base-line__inner">
-      <BaseIcon
-        :name="divideLine"
-        :width="divideWidth"
-        :height="divideHeight"
-        class="base-line__line"
-      />
+      <!--      <BaseIcon-->
+      <!--        :name="divideLine"-->
+      <!--        :width="divideWidth"-->
+      <!--        :height="divideHeight"-->
+      <!--        class="base-line__line"-->
+      <!--      />-->
+      <img :src="require(`@/assets/img/${path}.svg`)" alt="line" />
       <img src="@/assets/img/shine.png" alt="shine" class="base-line__shine" />
     </div>
   </div>
 </template>
 
 <script lang="js">
-import BaseIcon from "@/components/Base/BaseIcon.vue";
+// import BaseIcon from "@/components/Base/BaseIcon.vue";
 
 export default {
   name: 'BaseLine',
-  components: { BaseIcon },
+  // components: { BaseIcon },
   props: {
     divideLine: {
       type: String,
@@ -31,6 +32,10 @@ export default {
       type: String,
       default: '35',
     },
+    path: {
+      type: String,
+      default: ''
+    }
   },
 }
 </script>
