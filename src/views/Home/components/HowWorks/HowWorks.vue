@@ -1,6 +1,7 @@
 <template>
   <section class="how-works">
     <div class="wrap how-works__wrap">
+      <div class="how-works__ellipse-light" />
       <div class="how-works__inner">
         <h2 class="title title_h2 colored-el how-works__title">
           как будем работать
@@ -107,6 +108,25 @@ export default {
 <style lang="scss">
 .how-works {
   padding: 0 0 77px;
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__ellipse-light {
+    position: absolute;
+    z-index: -1;
+    left: -110px;
+    bottom: -70px;
+    width: 725px;
+    height: 725px;
+    border-radius: 50%;
+    border: 1px solid var(--color-bg-dark);
+    opacity: 0.2;
+    background: #467792;
+    filter: blur(150px);
+  }
+
   &__inner {
     padding: 45px 43px 61px;
     background-image: url(~@/assets/img/how-works/bg.svg);
