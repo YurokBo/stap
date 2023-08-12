@@ -2,17 +2,18 @@
   <div class="feedback">
     <Header />
     <CheckList />
+    <Form />
   </div>
 </template>
 
 <script lang="js">
-
 import Header from "@/views/Feedback/components/Header/FeedbackHeader.vue";
 import CheckList from "@/views/Feedback/components/CheckList/CheckList.vue";
+import Form from "@/views/Feedback/components/Form/Form.vue";
 
 export default  {
   name: "Feedback",
-  components: { CheckList, Header }
+  components: { Form, CheckList, Header }
 }
 </script>
 

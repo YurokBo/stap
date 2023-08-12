@@ -1,0 +1,397 @@
+<template>
+  <div class="form-block">
+    <h3 class="title title_h1 form-block__title">
+      <span class="colored-el"> успейте</span> занять место
+    </h3>
+    <form class="form-block__form" novalidate @submit.prevent="onSubmit()">
+      <div class="form-block__content">
+        <div class="form-block__column">
+          <div class="form-block__row">
+            <div class="form-block__field">
+              <span
+                v-if="
+                  $v.formData.company.$error && !$v.formData.company.required
+                "
+                class="form-block__field__error"
+              >
+                Введите название компании
+              </span>
+              <input
+                type="text"
+                name="company"
+                placeholder="Название компании *"
+                v-model.trim="formData.company"
+                :class="{
+                  'input-error':
+                    $v.formData.company.$error && !$v.formData.company.required,
+                }"
+              />
+            </div>
+            <div class="form-block__field">
+              <span
+                v-if="$v.formData.link.$error && !$v.formData.link.required"
+                class="form-block__field__error"
+              >
+                Введите сайт или соцсети
+              </span>
+              <input
+                type="text"
+                name="link"
+                placeholder="Сайт или соцсети компании *"
+                v-model.trim="formData.link"
+                :class="{
+                  'input-error':
+                    $v.formData.link.$error && !$v.formData.link.required,
+                }"
+              />
+            </div>
+          </div>
+          <div class="form-block__row">
+            <div class="form-block__field">
+              <span
+                v-if="$v.formData.name.$error && !$v.formData.name.required"
+                class="form-block__field__error"
+              >
+                Введите фаше ФИО
+              </span>
+              <input
+                type="text"
+                name="name"
+                placeholder="Ваше ФИО *"
+                v-model.trim="formData.name"
+                :class="{
+                  'input-error':
+                    $v.formData.name.$error && !$v.formData.name.required,
+                }"
+              />
+            </div>
+            <div class="form-block__field">
+              <span
+                v-if="
+                  $v.formData.position.$error && !$v.formData.position.required
+                "
+                class="form-block__field__error"
+              >
+                Введите вашу должность
+              </span>
+              <input
+                type="text"
+                name="position"
+                placeholder="Ваша должность *"
+                v-model.trim="formData.position"
+                :class="{
+                  'input-error':
+                    $v.formData.position.$error &&
+                    !$v.formData.position.required,
+                }"
+              />
+            </div>
+          </div>
+          <div class="form-block__row">
+            <div class="form-block__field">
+              <span
+                v-if="$v.formData.phone.$error"
+                class="form-block__field__error"
+              >
+                Введите ваш номер телефона
+              </span>
+              <input
+                type="text"
+                name="phone"
+                placeholder="Ваш номер телефона *"
+                v-model.trim="formData.phone"
+                :class="{
+                  'input-error': $v.formData.phone.$error,
+                }"
+              />
+            </div>
+            <div class="form-block__field">
+              <span
+                v-if="$v.formData.email.$error"
+                class="form-block__field__error"
+              >
+                Введите корректный email
+              </span>
+              <input
+                type="email"
+                name="email"
+                placeholder="Ваш E-mail *"
+                v-model.trim="formData.email"
+                :class="{
+                  'input-error': $v.formData.email.$error,
+                }"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-block__field form-block__field_message">
+          <span
+            class="text form-block__field__error"
+            v-if="$v.formData.message.$error && !$v.formData.message.required"
+          >
+            Расскажите о компании
+          </span>
+          <textarea
+            name="message"
+            placeholder="Расскажите, в чем сейчас трудности? Что хотите улучшить? *"
+            v-model.trim="formData.message"
+            :class="{
+              'input-error':
+                $v.formData.message.$dirty && !$v.formData.email.required,
+            }"
+          />
+        </div>
+      </div>
+      <label class="form-block__control">
+        <input
+          type="checkbox"
+          name="accept-policy"
+          v-model="formData.policyAccept"
+          class="check-box"
+        />
+        <span class="check-box-style" />
+        <span class="text_smallest form-block__control__text">
+          Я согласен с политикой обработки персональных данных
+        </span>
+      </label>
+      <button type="submit" class="form-block__btn">
+        <img
+          src="@/assets/img/button-border.png"
+          alt="border"
+          class="base-button__border"
+        />
+        <span> отправить заявку </span>
+      </button>
+    </form>
+  </div>
+</template>
+
+<script lang="js">
+import { validationMixin } from "vuelidate";
+import { email, numeric, required } from "vuelidate/lib/validators";
+import axios from 'axios';
+
+export default {
+  name: 'FormBlock',
+  mixins: [ validationMixin ],
+  data: () => ({
+    formData: {
+      company: '',
+      link: '',
+      name: '',
+      position: '',
+      phone: '',
+      email: '',
+      message: '',
+      policyAccept: true,
+    }
+  }),
+  validations: {
+    formData: {
+      company: {
+        required,
+      },
+      link: {
+        required,
+      },
+      name: {
+        required,
+      },
+      position: {
+        required,
+      },
+      phone: {
+        required,
+        numeric,
+      },
+      email: {
+        required,
+        email,
+      },
+      message: {
+        required,
+      },
+      policyAccept: {
+        required,
+      },
+    }
+  },
+  methods: {
+    async onSubmit() {
+      this.$v.formData.$touch();
+      if (this.$v.formData.$error) return;
+
+      await axios.post(
+        "/mail.php",
+        this.formData,
+        {
+          headers: {
+            'content-type': 'multipart/form-data'
+          }
+        }
+      ).then(() => {
+        Object.keys(this.formData).forEach((key) => {
+          return this.formData[key] = ''
+        })
+
+        this.$nextTick(() => {
+          this.$v.$reset()
+        })
+      })
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.form-block {
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__form {
+  }
+
+  &__content {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 21px;
+  }
+
+  &__column {
+    margin-right: 16px;
+  }
+
+  &__row {
+    display: flex;
+    gap: 13px;
+
+    &:not(:last-child) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__fields {
+  }
+
+  &__field {
+    position: relative;
+    width: 315px;
+
+    &_message {
+      width: 432px;
+    }
+
+    &__error {
+      position: absolute;
+      top: -14px;
+      left: 4px;
+      font-size: 10px;
+      color: var(--color-light-light-blue);
+    }
+
+    .input-error {
+      border: 2px solid var(--color-border-focus);
+    }
+
+    > textarea {
+      height: 100%;
+    }
+
+    > input,
+    > textarea {
+      width: 100%;
+      padding: 13px 17px;
+      font-family: $font-family-stem;
+      font-size: 16px;
+      font-weight: 350;
+      color: var(--color-text-white);
+      border-radius: 10px;
+      border: 2px solid var(--color-border);
+      background: var(--color-bg-dark-blue2);
+      transition: all 0.3s ease-in-out;
+
+      &::placeholder {
+        font-family: $font-family-stem;
+        font-size: 16px;
+        font-weight: 350;
+        color: var(--color-text-placeholder);
+      }
+
+      &:hover,
+      &:focus {
+        border: 2px solid var(--color-border-focus);
+      }
+    }
+  }
+
+  &__control {
+    position: relative;
+    padding-left: 32px;
+    cursor: pointer;
+
+    &__text {
+      line-height: 1.2;
+    }
+
+    .check-box {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+
+    .check-box-style {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      border: 2px solid var(--color-border);
+      background: var(--color-bg-dark-blue2);
+    }
+
+    .check-box:checked + .check-box-style {
+      border: 2px solid var(--color-border-focus);
+
+      &::before {
+        content: "\2713 \fe0e";
+        position: absolute;
+        left: 2px;
+        top: -2px;
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 26px 59px;
+    font-family: $font-family-micra;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-text-white);
+
+    > img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    &:active {
+      scale: 0.95;
+    }
+  }
+}
+</style>
