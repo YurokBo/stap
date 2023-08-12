@@ -20,6 +20,11 @@
         </div>
       </div>
     </div>
+    <img
+      src="@/assets/img/check-list/check-list-hand.png"
+      alt="check list"
+      class="check-list__img"
+    />
   </section>
 </template>
 
@@ -42,6 +47,7 @@ export default {
 
 <style lang="scss">
 .check-list {
+  position: relative;
   padding: 107px 0 66px;
 
   &__title {
@@ -69,6 +75,12 @@ export default {
         margin-left: 8px;
       }
     }
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 </style>

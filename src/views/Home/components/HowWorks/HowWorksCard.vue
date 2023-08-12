@@ -1,5 +1,5 @@
 <template>
-  <div class="how-works-card">
+  <div class="how-works-card" @click="showContent">
     <div class="how-works-card__header">
       <BaseNumber :number="number" />
       <BasePeriod :text="period" />
@@ -12,7 +12,6 @@
       alt="tap"
       class="how-works-card__tap"
       :class="{ 'how-works-card__tap_rotate': isShowContent }"
-      @click="showContent"
     />
     <transition name="fade">
       <div v-show="isShowContent" class="how-works-card__content">
@@ -76,6 +75,7 @@ export default {
   border-radius: 10px;
   border: 2px solid var(--color-border);
   background: var(--color-bg-dark-blue2);
+  cursor: pointer;
 
   &__header {
     display: flex;
@@ -100,7 +100,6 @@ export default {
     position: absolute;
     right: 16px;
     bottom: 24px;
-    cursor: pointer;
     transition: all 0.3s ease-in-out;
 
     &_rotate {
