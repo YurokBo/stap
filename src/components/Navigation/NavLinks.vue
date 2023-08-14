@@ -1,12 +1,14 @@
 <template>
   <nav class="nav-links">
-    <div
+    <router-link
       v-for="({ title, link }, i) in navLinks"
       :key="i"
+      to="/"
       class="nav-links__link"
+      @click.native="scrollFix(`#${link}`)"
     >
       {{ title }}
-    </div>
+    </router-link>
   </nav>
 </template>
 
@@ -15,13 +17,18 @@ export default {
   name: "NavLinks",
   data: () => ({
     navLinks: [
-      { title: "меню1", link: "" },
-      { title: "меню2", link: "" },
-      { title: "меню3", link: "" },
-      { title: "меню4", link: "" },
-      { title: "меню5", link: "" },
+      { title: "Консультация", link: "" },
+      { title: "АИСОТ", link: "about" },
+      { title: "Как работаем", link: "works" },
+      { title: "Преимущества", link: "benefits" },
+      { title: "Модули", link: "" },
     ],
   }),
+  methods: {
+    scrollFix(hash) {
+      location.hash = hash;
+    }
+  }
 };
 </script>
 

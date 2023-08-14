@@ -1,5 +1,5 @@
 <template>
-  <section class="how-works">
+  <section id="works" class="how-works">
     <div class="wrap how-works__wrap">
       <div class="ellipse-light how-works__ellipse-light" />
       <div class="how-works__inner">
@@ -107,6 +107,7 @@ export default {
 <style lang="scss">
 .how-works {
   padding: 0 0 77px;
+  scroll-margin-top: $scroll-margin-top;
 
   &__wrap {
     position: relative;

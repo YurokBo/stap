@@ -1,5 +1,5 @@
 <template>
-  <section class="benefits">
+  <section id="benefits" class="benefits">
     <img
       v-for="digit in digits"
       :key="digit"
@@ -60,6 +60,7 @@ export default {
 .benefits {
   position: relative;
   padding: 106px 0 220px;
+  scroll-margin-top: $scroll-margin-top;
 
   &__list {
     position: relative;

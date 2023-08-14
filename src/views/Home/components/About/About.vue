@@ -1,5 +1,5 @@
 <template>
-  <section class="about">
+  <section id="about" class="about">
     <div class="ellipse-light about__ellipse-light" />
     <img
       v-for="digit in digits"
@@ -39,6 +39,7 @@ export default {
 .about {
   position: relative;
   padding: 82px 0 44px;
+  scroll-margin-top: $scroll-margin-top;
 
   &__ellipse-light {
     top: 283px;

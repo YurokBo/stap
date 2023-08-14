@@ -4,7 +4,7 @@
 $to = 'phone9096311341@gmail.com';
 
 // тема письма
-$subject = 'Письмо с сыйта';
+$subject = 'Письмо с сайта';
 
 // текст письма
 $message = 'Название компании: ' . $_POST['company'] . '<br />' .
@@ -13,7 +13,6 @@ $message = 'Название компании: ' . $_POST['company'] . '<br />' 
     'Должность: ' . $_POST['position'] . '<br />' .
     'Телефон: ' . '<a href="tel:' . $_POST['phone'] . '">' . $_POST['phone'] . '</a>' . '<br />' .
     'Почта: ' . '<a href="mailto:' . $_POST['email'] . '">' . $_POST['email'] . '</a>' . '<br />' .
-    'Link to portfolio: ' . '<a href="' . $_POST['portfolio'] . '">' . $_POST['portfolio'] . '</a>' . '<br />' .
     'Текст о компании:' . $_POST['message'] . '<br />' .
 
 

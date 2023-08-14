@@ -8,7 +8,7 @@
 </template>
 
 <script lang="js">
-import Logo from "@/components/Navigation/Logo.vue";
+import Logo from "@/components/Logo/Logo.vue";
 import NavLinks from "@/components/Navigation/NavLinks.vue";
 
 export default {
