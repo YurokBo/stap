@@ -38,41 +38,43 @@ export default {
   align-items: center;
 
   &__link {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 123px;
-    padding: 10px 30px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-text-grey);
-    cursor: pointer;
+    @media (min-width: $screen-l) {
+      position: relative;
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      border: 1px solid var(--color-border-link);
-      border-radius: 6px;
-      transform: skew(20deg);
-      transition: all 0.3s ease-in-out;
-    }
-
-    &:hover {
-      color: var(--color-text-white);
-      transition: all 0.3s ease-in-out;
+      justify-content: center;
+      align-items: center;
+      min-width: 123px;
+      padding: 10px 30px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-grey);
+      cursor: pointer;
 
       &:before {
-        border: 1px solid var(--color-border-link-hover);
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--color-border-link);
+        border-radius: 6px;
+        transform: skew(20deg);
+        transition: all 0.3s ease-in-out;
       }
-    }
 
-    &:not(:last-child) {
-      margin-right: 15px;
+      &:hover {
+        color: var(--color-text-white);
+        transition: all 0.3s ease-in-out;
+
+        &:before {
+          border: 1px solid var(--color-border-link-hover);
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <!--    <Header />-->
+    <Header />
     <!--    <About />-->
     <!--    <HowWorks />-->
     <!--    <Description />-->
@@ -17,7 +17,7 @@ export default {
     //   import("@/views/Home/components/Description/Description.vue"),
     // HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
     // About: () => import("@/views/Home/components/About/About.vue"),
-    // Header: () => import("@/views/Home/components/Header/Header.vue"),
+    Header: () => import("@/views/Home/components/Header/Header.vue"),
   },
 };
 </script>

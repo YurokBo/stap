@@ -14,6 +14,7 @@
         <span /><span /><span />
       </button>
     </div>
+    <NavMenuMobile :class="{ 'nav-menu-mobile_active': isOpen }" />
   </div>
 </template>
 
@@ -21,10 +22,11 @@
 import Logo from "@/components/Logo/Logo.vue";
 import NavLinks from "@/components/Navigation/NavLinks.vue";
 import NavText from "@/components/Navigation/NavText.vue";
+import NavMenuMobile from "@/components/Navigation/NavMenuMobile.vue";
 
 export default {
   name: 'NavMenu',
-  components: { NavText, NavLinks, Logo },
+  components: { NavMenuMobile, NavText, NavLinks, Logo },
   data: () => ({
     isScrolled: false,
     isOpen: false,
@@ -39,6 +41,8 @@ export default {
     },
     openMobileMenu() {
       this.isOpen = !this.isOpen;
+      const body = document.querySelector('body')
+      body.style.overflow = this.isOpen ? 'hidden' : '';
     }
   }
 };
