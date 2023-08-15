@@ -3,11 +3,7 @@
     <div class="wrap footer__wrap">
       <div class="footer__content">
         <Logo class="footer__logo" />
-        <p class="text_small text_small">
-          ООО "СТАП"<br />
-          ИНН/КПП 9704212801/770401001 <br />
-          +7 964 555 3137
-        </p>
+        <RequisitesText />
       </div>
       <div class="footer__links">
         <a
@@ -32,10 +28,11 @@
 
 <script lang="js">
 import Logo from "@/components/Logo/Logo.vue";
+import RequisitesText from "@/components/RequisitesText/RequisitesText.vue";
 
 export default {
   name: 'Footer',
-  components: { Logo },
+  components: { RequisitesText, Logo },
   data: () => ({
     links: [
       {icon: 'vk', link: '#'},
@@ -62,9 +59,6 @@ export default {
   &__links {
     display: flex;
     align-items: center;
-  }
-
-  &__content {
   }
 
   &__logo {

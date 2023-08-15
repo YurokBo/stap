@@ -1,27 +1,23 @@
 <template>
   <div class="home">
-    <Header />
-    <About />
-    <HowWorks />
-    <Description />
-    <Benefits />
+    <!--    <Header />-->
+    <!--    <About />-->
+    <!--    <HowWorks />-->
+    <!--    <Description />-->
+    <!--    <Benefits />-->
   </div>
 </template>
 
 <script>
-import Header from "@/views/Home/components/Header/Header.vue";
-import About from "@/views/Home/components/About/About.vue";
-import HowWorks from "@/views/Home/components/HowWorks/HowWorks.vue";
-import Description from "@/views/Home/components/Description/Description.vue";
-import Benefits from "@/views/Home/components/Benefits/Benefits.vue";
 export default {
   name: "Home",
   components: {
-    Benefits,
-    Description,
-    HowWorks,
-    About,
-    Header,
+    // Benefits: () => import("@/views/Home/components/Benefits/Benefits.vue"),
+    // Description: () =>
+    //   import("@/views/Home/components/Description/Description.vue"),
+    // HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
+    // About: () => import("@/views/Home/components/About/About.vue"),
+    // Header: () => import("@/views/Home/components/Header/Header.vue"),
   },
 };
 </script>

@@ -34,7 +34,6 @@ export default {
 
 <style lang="scss">
 .nav-links {
-  display: flex;
   justify-content: center;
   align-items: center;
 
