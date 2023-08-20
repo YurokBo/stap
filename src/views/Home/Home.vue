@@ -13,7 +13,7 @@
     </div>
     <About />
     <HowWorks />
-    <!--    <Description />-->
+    <Description />
     <!--    <Benefits />-->
   </main>
 </template>
@@ -26,8 +26,8 @@ export default {
   components: {
     HeaderCards,
     // Benefits: () => import("@/views/Home/components/Benefits/Benefits.vue"),
-    // Description: () =>
-    //   import("@/views/Home/components/Description/Description.vue"),
+    Description: () =>
+      import("@/views/Home/components/Description/Description.vue"),
     HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
     About: () => import("@/views/Home/components/About/About.vue"),
     Header: () => import("@/views/Home/components/Header/Header.vue"),
