@@ -47,7 +47,7 @@ export default {
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    width: 561px;
+    width: 100%;
     height: 561px;
 
     @media (min-width: $screen-m) {

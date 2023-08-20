@@ -12,7 +12,7 @@
       </div>
     </div>
     <About />
-    <!--    <HowWorks />-->
+    <HowWorks />
     <!--    <Description />-->
     <!--    <Benefits />-->
   </main>
@@ -28,7 +28,7 @@ export default {
     // Benefits: () => import("@/views/Home/components/Benefits/Benefits.vue"),
     // Description: () =>
     //   import("@/views/Home/components/Description/Description.vue"),
-    // HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
+    HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
     About: () => import("@/views/Home/components/About/About.vue"),
     Header: () => import("@/views/Home/components/Header/Header.vue"),
   },

@@ -4,10 +4,14 @@
       <div class="ellipse-light how-works__ellipse-light" />
       <div class="how-works__inner">
         <h2 class="title title_h2 colored-el how-works__title">
-          как будем работать
+          <span> как будем работать </span>
           <BaseLine
             path="how-works/divide-line-how-works"
             class="how-works__divide-line"
+          />
+          <BaseLine
+            path="how-works/divide-line-hiw-works-mobile"
+            class="how-works__divide-line_mobile"
           />
         </h2>
         <div class="how-works__cards">
@@ -106,8 +110,12 @@ export default {
 
 <style lang="scss">
 .how-works {
-  padding: 0 0 77px;
+  padding: 0 0 56px;
   scroll-margin-top: $scroll-margin-top;
+
+  @media (min-width: $screen-m) {
+    padding: 0 0 77px;
+  }
 
   &__wrap {
     position: relative;
@@ -115,33 +123,75 @@ export default {
 
   &__ellipse-light {
     left: -110px;
-    bottom: -70px;
-    width: 725px;
-    height: 725px;
+    bottom: 120px;
+    width: 100%;
+    height: 588px;
+
+    @media (min-width: $screen-m) {
+      left: -110px;
+      bottom: -70px;
+      width: 725px;
+      height: 725px;
+    }
   }
 
   &__inner {
-    padding: 45px 43px 61px;
-    background-image: url(~@/assets/img/how-works/bg.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
+    @media (min-width: $screen-m) {
+      padding: 45px 43px 61px;
+      background-image: url(~@/assets/img/how-works/bg.svg);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
   }
 
   &__title {
     position: relative;
     margin-bottom: 47px;
+
+    > span {
+      display: block;
+      width: 250px;
+      @media (min-width: $screen-m) {
+        width: 100%;
+      }
+    }
   }
 
   &__divide-line {
+    display: none;
     z-index: 1;
+
+    @media (min-width: $screen-m) {
+      display: block;
+    }
+
+    &_mobile {
+      z-index: 1;
+      margin-top: -13px;
+
+      @media (min-width: $screen-m) {
+        display: none;
+      }
+    }
   }
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 62px 53px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
     margin-bottom: 62px;
+
+    @media (min-width: $screen-m) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 62px 53px;
+      margin-bottom: 62px;
+    }
+
+    @media (min-width: $screen-l) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__button {

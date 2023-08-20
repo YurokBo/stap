@@ -49,9 +49,14 @@ export default {
   }
 
   &__shine {
-    position: absolute;
-    top: -30px;
-    right: 835px;
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: block;
+      position: absolute;
+      top: -30px;
+      right: 835px;
+    }
   }
 }
 </style>
