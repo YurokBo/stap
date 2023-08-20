@@ -9,7 +9,7 @@
     <p class="subtitle colored-el header-content__subtitle">
       за счет автоматизации охраны труда
     </p>
-    <HeaderCards />
+    <HeaderCards class="header-content__cards" />
   </div>
 </template>
 
@@ -25,11 +25,31 @@ export default {
 <style lang="scss">
 .header-content {
   &__title {
-    margin-bottom: 21px;
+    margin-bottom: 15px;
+    text-align: center;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 21px;
+      text-align: left;
+    }
   }
 
   &__subtitle {
-    margin-bottom: 45px;
+    margin-bottom: 344px;
+    text-align: center;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 45px;
+      text-align: left;
+    }
+  }
+
+  &__cards {
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: grid;
+    }
   }
 }
 </style>

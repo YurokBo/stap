@@ -25,10 +25,18 @@ export default {
 <style lang="scss">
 .header {
   &-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px 27px;
-    max-width: 507px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    @media (min-width: $screen-m) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 27px;
+      max-width: 507px;
+    }
   }
 }
 </style>

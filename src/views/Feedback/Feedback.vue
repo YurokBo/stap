@@ -1,9 +1,9 @@
 <template>
-  <div class="feedback">
+  <main class="feedback">
     <Header />
     <CheckList />
     <Form />
-  </div>
+  </main>
 </template>
 
 <script lang="js">

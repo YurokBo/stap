@@ -54,10 +54,18 @@ export default {
 .header-animation {
   position: absolute;
   z-index: 3;
-  top: 64px;
-  right: 59px;
-  width: 611px;
-  height: 421px;
+  bottom: 120px;
+  right: 0;
+  width: 100%;
+  height: 340px;
+
+  @media (min-width: $screen-m) {
+    top: 64px;
+    right: 59px;
+    bottom: unset;
+    width: 611px;
+    height: 421px;
+  }
 
   &__content {
     position: relative;
@@ -66,18 +74,32 @@ export default {
 
     .center {
       position: absolute;
-      bottom: -4px;
-      left: 185px;
-      transform: scale(1);
+      bottom: 0;
+      left: 50%;
+      width: 158px;
+      height: 158px;
+      transform: translateX(-50%);
+
+      @media (min-width: $screen-m) {
+        bottom: -4px;
+        left: 185px;
+        width: initial;
+        height: initial;
+        transform: scale(1) translateX(0);
+      }
     }
 
     .text-block {
       position: absolute;
       font-family: $font-family-micra;
-      font-size: 12px;
+      font-size: 7px;
       font-weight: 400;
       line-height: 1.7;
       text-transform: uppercase;
+
+      @media (min-width: $screen-m) {
+        font-size: 12px;
+      }
 
       &__content {
         position: relative;
@@ -94,42 +116,78 @@ export default {
     }
 
     .text-block1 {
-      width: 145px;
-      height: 156px;
-      bottom: 110px;
-      left: 50px;
+      width: 91px;
+      height: 92px;
+      bottom: 92px;
+      left: 18px;
+
+      @media (min-width: $screen-m) {
+        width: 145px;
+        height: 156px;
+        bottom: 110px;
+        left: 50px;
+      }
 
       p {
-        left: 25px;
-        top: 89px;
+        left: 15px;
+        top: 55px;
+
+        @media (min-width: $screen-m) {
+          left: 25px;
+          top: 89px;
+        }
       }
     }
 
     .text-block2 {
-      width: 164px;
-      height: 124px;
-      bottom: 225px;
-      left: 192px;
+      width: 91px;
+      height: 92px;
+      bottom: 140px;
+      left: 123px;
+
+      @media (min-width: $screen-m) {
+        width: 164px;
+        height: 124px;
+        bottom: 225px;
+        left: 192px;
+      }
 
       p {
-        left: 50px;
-        top: 24px;
+        left: 29px;
+        top: 16px;
         text-align: center;
+
+        @media (min-width: $screen-m) {
+          left: 50px;
+          top: 24px;
+        }
       }
     }
 
     .text-block3 {
-      width: 160px;
-      height: 164px;
-      bottom: 146px;
-      left: 362px;
+      width: 91px;
+      height: 92px;
+      bottom: 112px;
+      left: 235px;
+
+      @media (min-width: $screen-m) {
+        width: 160px;
+        height: 164px;
+        bottom: 146px;
+        left: 362px;
+      }
 
       p {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        left: 20px;
-        top: 78px;
+        left: 10px;
+        top: 45px;
+
+        @media (min-width: $screen-m) {
+          left: 20px;
+          top: 78px;
+        }
       }
     }
 
@@ -138,49 +196,87 @@ export default {
     }
 
     .elem1 {
-      width: 35px;
-      height: 38px;
-      bottom: 27px;
-      left: 180px;
+      width: 25px;
+      height: 28px;
+      bottom: 25px;
+      left: 93px;
+
+      @media (min-width: $screen-m) {
+        width: 35px;
+        height: 38px;
+        bottom: 27px;
+        left: 180px;
+      }
     }
 
     .elem2 {
-      width: 41px;
-      height: 49px;
-      bottom: 114px;
-      left: 161px;
+      width: 30px;
+      height: 30px;
+      bottom: 90px;
+      left: 87px;
+
+      @media (min-width: $screen-m) {
+        width: 41px;
+        height: 49px;
+        bottom: 114px;
+        left: 161px;
+      }
     }
 
     .elem3 {
-      width: 41px;
-      height: 21px;
-      bottom: 212px;
-      left: 262px;
+      width: 28px;
+      height: 12px;
+      bottom: 155px;
+      left: 162px;
+
+      @media (min-width: $screen-m) {
+        width: 41px;
+        height: 21px;
+        bottom: 212px;
+        left: 262px;
+      }
     }
 
     .elem4 {
-      width: 38px;
-      height: 34px;
-      bottom: 165px;
-      left: 360px;
+      width: 22px;
+      height: 26px;
+      bottom: 113px;
+      left: 237px;
+
+      @media (min-width: $screen-m) {
+        width: 38px;
+        height: 34px;
+        bottom: 165px;
+        left: 360px;
+      }
     }
 
     .main-text {
       position: absolute;
       bottom: 40px;
-      right: -10px;
+      right: 10px;
       font-family: $font-family-micra;
-      font-size: 20px;
+      font-size: 8px;
       font-weight: 400;
       line-height: 1.7;
       text-transform: uppercase;
       text-align: center;
+
+      @media (min-width: $screen-m) {
+        right: -10px;
+        font-size: 20px;
+      }
     }
 
     .center-light {
-      position: absolute;
-      top: -5px;
-      left: -23px;
+      display: none;
+
+      @media (min-width: $screen-m) {
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: -23px;
+      }
     }
   }
 }

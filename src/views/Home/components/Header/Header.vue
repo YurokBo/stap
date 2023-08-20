@@ -2,7 +2,6 @@
   <header class="header">
     <div class="wrap header__wrap">
       <div class="header__inner">
-        <img src="@/assets/img/common-header-bg.png" class="header__bg" />
         <HeaderContent />
         <HeaderAnimation />
         <img
@@ -27,6 +26,7 @@ export default {
   data: () => ({
     images: [
       {img: 'ufo.png', class: 'header__img-ufo', alt: 'ufo'},
+      {img: 'ufo-mobile.png', class: 'header__img-ufo_mobile', alt: 'ufo'},
       {img: 'hand2.png', class: 'header__hand', alt: 'hand2'},
       {img: 'vertical-light.svg', class: 'header__vertical-light', alt: 'vertical-light'},
       {img: 'dust.png', class: 'header__dust', alt: 'dust'},
@@ -42,7 +42,16 @@ export default {
 
   &__inner {
     position: relative;
-    padding: 45px 45px 66px 54px;
+    padding: 66px 17px 17px;
+    background-image: url(~@/assets/img/common-header-bg-mobile.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+    @media (min-width: $screen-m) {
+      padding: 45px 45px 66px 54px;
+      background-image: url(~@/assets/img/common-header-bg.png);
+    }
   }
 
   &__bg {
@@ -57,38 +66,77 @@ export default {
   &__hand {
     position: absolute;
     z-index: 3;
-    width: 653px;
+    width: 325px;
     right: 0;
-    bottom: 0;
+    bottom: 17px;
+
+    @media (min-width: $screen-m) {
+      bottom: 0;
+      width: 653px;
+    }
   }
 
   &__vertical-light {
     position: absolute;
     z-index: 2;
     top: 0;
-    right: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+
+    @media (min-width: $screen-m) {
+      right: 0;
+      left: unset;
+      width: initial;
+      height: 100%;
+    }
   }
 
   &__dust {
     position: absolute;
     z-index: 2;
     bottom: 0;
-    right: 159px;
+    right: 0;
+
+    @media (min-width: $screen-m) {
+      right: 159px;
+    }
   }
 
   &__ellipse-light {
-    position: absolute;
-    left: -545px;
-    bottom: -400px;
-    z-index: -2;
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: block;
+      position: absolute;
+      left: -545px;
+      bottom: -400px;
+      z-index: -2;
+    }
   }
 
   &__img-ufo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 0;
+    display: none;
+
+    @media (min-width: $screen-m) {
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      z-index: 0;
+    }
+
+    &_mobile {
+      position: absolute;
+      top: 0;
+      right: -16px;
+      z-index: 0;
+      width: 400px;
+
+      @media (min-width: $screen-m) {
+        display: none;
+      }
+    }
   }
 }
 </style>
