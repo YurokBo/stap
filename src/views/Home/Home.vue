@@ -11,7 +11,7 @@
         <HeaderCards class="home__header-cards__cards" />
       </div>
     </div>
-    <!--    <About />-->
+    <About />
     <!--    <HowWorks />-->
     <!--    <Description />-->
     <!--    <Benefits />-->
@@ -29,7 +29,7 @@ export default {
     // Description: () =>
     //   import("@/views/Home/components/Description/Description.vue"),
     // HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
-    // About: () => import("@/views/Home/components/About/About.vue"),
+    About: () => import("@/views/Home/components/About/About.vue"),
     Header: () => import("@/views/Home/components/Header/Header.vue"),
   },
 };

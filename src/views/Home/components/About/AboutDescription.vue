@@ -63,7 +63,7 @@ export default {
         justify-content: flex-end;
         align-items: center;
         margin-bottom: 40px;
-        font-weight: 300;
+        font-weight: 350;
         text-align: right;
 
         &:last-child {
@@ -78,6 +78,7 @@ export default {
     }
 
     &_after {
+      order: 1;
       margin-left: -80px;
       > p {
         display: flex;

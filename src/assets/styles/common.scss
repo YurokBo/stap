@@ -74,10 +74,14 @@ body {
 }
 
 .text {
-  font-weight: 300;
+  font-weight: 350;
 
   &_large {
-    font-size: 20px;
+    font-size: 16px;
+
+    @media (min-width: $screen-l) {
+      font-size: 20px;
+    }
   }
 
   &_medium {

@@ -10,9 +10,9 @@
       class="base-button__border"
     />
     <p v-html="text" class="base-button__text" />
-    <span v-if="isFingerPrint" class="base-button__img">
+    <div v-if="isFingerPrint" class="base-button__img">
       <img src="@/assets/img/fingerprint.png" alt="fingerprint" />
-    </span>
+    </div>
     <img
       v-if="isShine"
       src="@/assets/img/shine.png"
@@ -45,14 +45,27 @@ export default {
 <style lang="scss">
 .base-button {
   position: relative;
-  padding: 25.5px 133px 25.5px 60px;
+  padding: 16.5px 73px 16.5px 32px;
   font-family: $font-family-micra;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 400;
   line-height: 1.4;
   color: var(--color-text-white);
   border-radius: 1000px;
   transition: all 0.3s ease-in-out;
+
+  @media (min-width: $screen-m) {
+    padding: 25.5px 133px 25.5px 60px;
+    font-size: 14px;
+
+    &:hover {
+      scale: 0.95;
+    }
+  }
+
+  &:active {
+    scale: 0.95;
+  }
 
   &_padding {
     padding: 16px 49px 12px;
@@ -72,13 +85,6 @@ export default {
     text-align: center;
   }
 
-  &:hover {
-    .base-button__shine {
-      bottom: -72px;
-      scale: 0.85;
-    }
-  }
-
   &__img {
     position: absolute;
     top: 50%;
@@ -86,24 +92,39 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90px;
-    height: 90px;
+    width: 58px;
+    height: 58px;
     transform: translateY(-50%);
     background: var(--color-button-gradient);
     border-radius: 50%;
 
+    @media (min-width: $screen-m) {
+      width: 90px;
+      height: 90px;
+    }
+
     > img {
-      width: 50px;
-      height: 50px;
+      width: 32px;
+      height: 32px;
+
+      @media (min-width: $screen-m) {
+        width: 50px;
+        height: 50px;
+      }
     }
   }
 
   &__shine {
     position: absolute;
-    bottom: -73px;
-    left: -91px;
+    bottom: -48px;
+    left: -0;
     pointer-events: none;
     transition: all 0.3s ease-in-out;
+
+    @media (min-width: $screen-m) {
+      bottom: -73px;
+      left: -91px;
+    }
   }
 }
 </style>

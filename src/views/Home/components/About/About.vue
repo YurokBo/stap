@@ -15,7 +15,8 @@
         процессов охраны труда, промышленной и пожарной безопасности, экологии и
         других взамосвязанных направлений
       </p>
-      <AboutDescription />
+      <AboutDescription class="about__description" />
+      <AboutDescriptionMobile class="about__description_mobile" />
       <BaseButton />
     </div>
   </section>
@@ -25,10 +26,11 @@
 
 import BaseButton from "@/components/Base/BaseButton.vue";
 import AboutDescription from "@/views/Home/components/About/AboutDescription.vue";
+import AboutDescriptionMobile from "@/views/Home/components/About/AboutDescriptionMobile.vue";
 
 export default {
   name: 'About',
-  components: { AboutDescription, BaseButton },
+  components: { AboutDescriptionMobile, AboutDescription, BaseButton },
   data: () => ({
     digits: ['left', 'right']
   })
@@ -42,11 +44,18 @@ export default {
   scroll-margin-top: $scroll-margin-top;
 
   &__ellipse-light {
-    top: 283px;
+    top: -100px;
     left: 50%;
-    transform: translateX(-60%);
-    width: 945px;
-    height: 945px;
+    transform: translateX(-50%);
+    width: 561px;
+    height: 561px;
+
+    @media (min-width: $screen-m) {
+      top: 283px;
+      transform: translateX(-60%);
+      width: 945px;
+      height: 945px;
+    }
   }
 
   &__wrap {
@@ -57,9 +66,14 @@ export default {
   }
 
   &__digits {
-    position: absolute;
-    top: -45px;
-    z-index: -2;
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: block;
+      position: absolute;
+      top: -45px;
+      z-index: -2;
+    }
 
     &_left {
       left: 0;
@@ -71,12 +85,28 @@ export default {
   }
 
   &__title {
-    width: 800px;
+    width: 311px;
     margin: 0 auto;
     text-align: center;
 
+    @media (min-width: $screen-m) {
+      width: 800px;
+    }
+
     > span {
       text-transform: uppercase;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: flex;
+
+      &_mobile {
+        display: none;
+      }
     }
   }
 }
