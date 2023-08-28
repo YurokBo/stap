@@ -10,7 +10,7 @@
             class="how-works__divide-line"
           />
           <BaseLine
-            path="how-works/divide-line-hiw-works-mobile"
+            path="how-works/divide-line-how-works-mobile"
             class="how-works__divide-line_mobile"
           />
         </h2>

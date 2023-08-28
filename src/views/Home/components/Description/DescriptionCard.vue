@@ -1,18 +1,11 @@
 <template>
   <div class="description-card">
     <img
-      src="@/assets/img/common-card-bg.png"
-      alt="card background"
-      class="description-card__bg"
+      :src="require(`@/assets/img/description/${icon}.png`)"
+      :alt="icon"
+      class="description-card__icon"
     />
-    <div class="description-card__content">
-      <img
-        :src="require(`@/assets/img/description/${icon}.png`)"
-        :alt="icon"
-        class="description-card__icon"
-      />
-      <p class="text text_large" v-html="text" />
-    </div>
+    <p class="text" v-html="text" />
   </div>
 </template>
 
@@ -34,30 +27,31 @@ export default {
 
 <style lang="scss">
 .description-card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
 
-  &__bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-
-  &__content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  @media (min-width: $screen-m) {
     padding: 53px 25px 57px;
+    background-image: url(~@/assets/img/common-card-bg.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100% 100%;
   }
 
   &__icon {
-    width: 124px;
-    height: 120px;
-    margin-bottom: 44px;
+    width: 77px;
+    height: 75px;
+    margin-bottom: 35px;
+
+    @media (min-width: $screen-m) {
+      width: 124px;
+      height: 120px;
+      margin-bottom: 44px;
+    }
   }
 }
 </style>
