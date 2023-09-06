@@ -18,6 +18,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 88px;
+  min-height: 56px;
 
   &__icon {
     width: 100%;
