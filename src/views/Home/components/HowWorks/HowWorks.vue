@@ -113,7 +113,7 @@ export default {
   padding: 0 0 56px;
   scroll-margin-top: $scroll-margin-top;
 
-  @media (min-width: $screen-m) {
+  @media (min-width: $screen-l) {
     padding: 0 0 77px;
   }
 
@@ -127,7 +127,7 @@ export default {
     width: 100%;
     height: 588px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       left: -110px;
       bottom: -70px;
       width: 725px;
@@ -136,7 +136,7 @@ export default {
   }
 
   &__inner {
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       padding: 45px 43px 61px;
       background-image: url(~@/assets/img/how-works/bg.svg);
       background-size: 100% 100%;
@@ -152,7 +152,7 @@ export default {
     > span {
       display: block;
       width: 250px;
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         width: 100%;
       }
     }
@@ -162,7 +162,7 @@ export default {
     display: none;
     z-index: 1;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: block;
     }
 
@@ -170,7 +170,7 @@ export default {
       z-index: 1;
       margin-top: -13px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         display: none;
       }
     }
@@ -182,7 +182,7 @@ export default {
     gap: 24px;
     margin-bottom: 62px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 62px 53px;

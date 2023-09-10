@@ -39,7 +39,7 @@ export default {
   &__header-cards {
     position: relative;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: none;
     }
 

@@ -59,7 +59,7 @@ export default {
   width: 100%;
   height: 340px;
 
-  @media (min-width: $screen-m) {
+  @media (min-width: $screen-l) {
     top: 64px;
     right: 59px;
     bottom: unset;
@@ -80,7 +80,7 @@ export default {
       height: 158px;
       transform: translateX(-50%);
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         bottom: -4px;
         left: 185px;
         width: initial;
@@ -97,7 +97,7 @@ export default {
       line-height: 1.7;
       text-transform: uppercase;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         font-size: 12px;
       }
 
@@ -121,7 +121,7 @@ export default {
       bottom: 92px;
       left: 18px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         width: 145px;
         height: 156px;
         bottom: 110px;
@@ -132,7 +132,7 @@ export default {
         left: 15px;
         top: 55px;
 
-        @media (min-width: $screen-m) {
+        @media (min-width: $screen-l) {
           left: 25px;
           top: 89px;
         }
@@ -145,7 +145,7 @@ export default {
       bottom: 140px;
       left: 123px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         width: 164px;
         height: 124px;
         bottom: 225px;
@@ -157,7 +157,7 @@ export default {
         top: 16px;
         text-align: center;
 
-        @media (min-width: $screen-m) {
+        @media (min-width: $screen-l) {
           left: 50px;
           top: 24px;
         }
@@ -170,7 +170,7 @@ export default {
       bottom: 112px;
       left: 235px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         width: 160px;
         height: 164px;
         bottom: 146px;
@@ -184,7 +184,7 @@ export default {
         left: 10px;
         top: 45px;
 
-        @media (min-width: $screen-m) {
+        @media (min-width: $screen-l) {
           left: 20px;
           top: 78px;
         }
@@ -201,7 +201,7 @@ export default {
       bottom: 25px;
       left: 93px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         width: 35px;
         height: 38px;
         bottom: 27px;
@@ -215,7 +215,7 @@ export default {
       bottom: 90px;
       left: 87px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         width: 41px;
         height: 49px;
         bottom: 114px;
@@ -229,7 +229,7 @@ export default {
       bottom: 155px;
       left: 162px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         width: 41px;
         height: 21px;
         bottom: 212px;
@@ -243,7 +243,7 @@ export default {
       bottom: 113px;
       left: 237px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         width: 38px;
         height: 34px;
         bottom: 165px;
@@ -262,7 +262,7 @@ export default {
       text-transform: uppercase;
       text-align: center;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         right: -10px;
         font-size: 20px;
       }
@@ -271,7 +271,7 @@ export default {
     .center-light {
       display: none;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         display: block;
         position: absolute;
         top: -5px;

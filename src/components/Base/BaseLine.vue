@@ -51,7 +51,7 @@ export default {
   &__shine {
     display: none;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: block;
       position: absolute;
       top: -30px;

@@ -31,7 +31,7 @@ export default {
     justify-content: flex-end;
     align-items: flex-end;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 32px 27px;

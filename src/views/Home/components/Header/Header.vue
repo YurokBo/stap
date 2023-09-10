@@ -48,7 +48,7 @@ export default {
     background-position: center;
     background-size: 100% 100%;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       padding: 45px 45px 66px 54px;
       background-image: url(~@/assets/img/common-header-bg.png);
     }
@@ -70,7 +70,7 @@ export default {
     right: 0;
     bottom: 17px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       bottom: 0;
       width: 653px;
     }
@@ -84,7 +84,7 @@ export default {
     width: 100%;
     height: 100%;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       right: 0;
       left: unset;
       width: initial;
@@ -98,7 +98,7 @@ export default {
     bottom: 0;
     right: 0;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       right: 159px;
     }
   }
@@ -106,7 +106,7 @@ export default {
   &__ellipse-light {
     display: none;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: block;
       position: absolute;
       left: -545px;
@@ -118,7 +118,7 @@ export default {
   &__img-ufo {
     display: none;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       position: absolute;
       display: block;
       top: 0;
@@ -133,7 +133,7 @@ export default {
       z-index: 0;
       width: 400px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         display: none;
       }
     }

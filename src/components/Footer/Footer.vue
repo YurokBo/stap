@@ -53,7 +53,7 @@ export default {
   font-weight: 400;
   color: var(--color-text-grey);
 
-  @media (min-width: $screen-m) {
+  @media (min-width: $screen-l) {
     padding: 60px 0;
   }
 
@@ -62,7 +62,7 @@ export default {
     flex-direction: column;
     justify-content: space-between;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       flex-direction: row;
       align-items: center;
     }
@@ -78,7 +78,7 @@ export default {
     justify-content: space-between;
     margin-bottom: 51px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       justify-content: initial;
       margin-bottom: 0;
     }
@@ -91,7 +91,7 @@ export default {
   &__links {
     &__policy {
       font-size: 14px;
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         margin-left: 53px;
       }
     }
@@ -99,14 +99,14 @@ export default {
 
   &__requisites-text {
     display: none;
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: block;
     }
 
     &_mobile {
       margin-bottom: 32px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         display: none;
         margin-bottom: 0;
       }
@@ -115,12 +115,12 @@ export default {
 
   &__socials {
     display: none;
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: block;
     }
 
     &_mobile {
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         display: none;
       }
     }

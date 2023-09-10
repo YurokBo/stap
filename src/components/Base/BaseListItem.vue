@@ -32,14 +32,14 @@ export default {
   align-items: center;
   font-size: 14px;
 
-  @media (min-width: $screen-m) {
+  @media (min-width: $screen-l) {
     font-size: 20px;
   }
 
   &__arrow {
     display: none;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: block;
       margin-right: 32px;
     }
@@ -47,7 +47,7 @@ export default {
     &_mobile {
       margin-right: 21px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         display: none;
         margin-right: 0;
       }

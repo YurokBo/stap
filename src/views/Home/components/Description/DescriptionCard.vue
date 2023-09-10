@@ -34,7 +34,7 @@ export default {
   font-size: 20px;
   text-align: center;
 
-  @media (min-width: $screen-m) {
+  @media (min-width: $screen-l) {
     padding: 53px 25px 57px;
     background-image: url(~@/assets/img/common-card-bg.png);
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@ export default {
     height: 75px;
     margin-bottom: 35px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       width: 124px;
       height: 120px;
       margin-bottom: 44px;

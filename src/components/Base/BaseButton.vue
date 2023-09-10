@@ -54,7 +54,7 @@ export default {
   border-radius: 1000px;
   transition: all 0.3s ease-in-out;
 
-  @media (min-width: $screen-m) {
+  @media (min-width: $screen-l) {
     padding: 25.5px 133px 25.5px 60px;
     font-size: 14px;
 
@@ -98,7 +98,7 @@ export default {
     background: var(--color-button-gradient);
     border-radius: 50%;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       width: 90px;
       height: 90px;
     }
@@ -107,7 +107,7 @@ export default {
       width: 32px;
       height: 32px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         width: 50px;
         height: 50px;
       }
@@ -121,7 +121,7 @@ export default {
     pointer-events: none;
     transition: all 0.3s ease-in-out;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       bottom: -73px;
       left: -91px;
     }

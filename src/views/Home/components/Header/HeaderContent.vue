@@ -28,7 +28,7 @@ export default {
     margin-bottom: 15px;
     text-align: center;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       margin-bottom: 21px;
       text-align: left;
     }
@@ -38,7 +38,7 @@ export default {
     margin-bottom: 344px;
     text-align: center;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       margin-bottom: 45px;
       text-align: left;
     }
@@ -47,7 +47,7 @@ export default {
   &__cards {
     display: none;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: grid;
     }
   }

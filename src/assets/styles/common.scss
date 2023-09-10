@@ -18,7 +18,7 @@ body {
   margin: 0 auto;
   padding: 0 16px;
 
-  @media (min-width: $screen-m) {
+  @media (min-width: $screen-l) {
     max-width: 100%;
   }
   //
@@ -54,7 +54,7 @@ body {
     font-size: 18px;
     line-height: 1.44;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       font-size: 42px;
       line-height: 0.95;
     }

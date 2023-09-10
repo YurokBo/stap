@@ -18,34 +18,40 @@
           class="description__divide-line_mobile"
         />
       </h2>
-      <!--      <div class="description__content">-->
-      <!--        <div class="description__tabs">-->
-      <!--          <BaseTabs-->
-      <!--            v-for="(tab, i) in tabs"-->
-      <!--            :key="i"-->
-      <!--            :tab="i"-->
-      <!--            :content="tab"-->
-      <!--            :current-tab="currentTab"-->
-      <!--            class="description__tabs__tab"-->
-      <!--            @change-tab="changeTab"-->
-      <!--          />-->
-      <!--        </div>-->
-      <!--        <img-->
-      <!--          src="@/assets/img/description/ruler.svg"-->
-      <!--          alt="ruler"-->
-      <!--          class="description__content__ruler"-->
-      <!--        />-->
-      <!--        <div class="description__content__tab-content">-->
-      <!--          <div-->
-      <!--            v-for="(text, i) in tabContent[currentTab]"-->
-      <!--            :key="i"-->
-      <!--            class="text text_medium description__content__tab-content__text"-->
-      <!--          >-->
-      <!--            <BaseNumber :is-size-large="false" :number="i + 1" />-->
-      <!--            {{ text }}-->
-      <!--          </div>-->
-      <!--        </div>-->
-      <!--      </div>-->
+      <div class="description__content">
+        <div class="description__tabs">
+          <BaseTabs
+            v-for="(tab, i) in tabs"
+            :key="i"
+            :tab="i"
+            :content="tab"
+            :current-tab="currentTab"
+            class="description__tabs__tab"
+            @change-tab="changeTab"
+          />
+        </div>
+        <img
+          src="@/assets/img/description/ruler.svg"
+          alt="ruler"
+          class="description__content__ruler"
+        />
+        <div class="description__content__tab-content">
+          <div
+            v-for="(text, i) in tabContent[currentTab]"
+            :key="i"
+            class="text text_medium description__content__tab-content__text"
+          >
+            <BaseNumber :is-size-large="false" :number="i + 1" />
+            {{ text }}
+          </div>
+        </div>
+      </div>
+      <DescriptionAccordion
+        v-for="({ title, content }, i) in accordion"
+        :key="i"
+        :title="title"
+        :content="content"
+      />
       <div class="description__cards">
         <DescriptionCard
           v-for="(text, i) in cards"
@@ -60,13 +66,14 @@
 
 <script lang="js">
 import BaseLine from "@/components/Base/BaseLine.vue";
-// import BaseTabs from "@/components/Base/BaseTabs.vue";
-// import BaseNumber from "@/components/Base/BaseNumber.vue";
+import BaseTabs from "@/components/Base/BaseTabs.vue";
+import BaseNumber from "@/components/Base/BaseNumber.vue";
 import DescriptionCard from "@/views/Home/components/Description/DescriptionCard.vue";
+import DescriptionAccordion from "@/views/Home/components/Description/DescriptionAccordion.vue";
 
 export default {
   name: 'Description',
-  components: { DescriptionCard, /*BaseNumber, BaseTabs,*/ BaseLine },
+  components: { DescriptionAccordion, DescriptionCard, BaseNumber, BaseTabs, BaseLine },
   data: () => ({
     currentTab: 0,
     show: false,
@@ -128,6 +135,14 @@ export default {
       'В 1, 2 и более <br />локациях'
     ]
   }),
+  computed: {
+    accordion() {
+      return this.tabs.map((_, i) => ({
+        title: this.tabs[i],
+        content: this.tabContent[i]
+      }))
+    }
+  },
   methods: {
     changeTab(count) {
       return this.currentTab = count;
@@ -149,7 +164,7 @@ export default {
     margin-bottom: 51px;
     padding: 0 50px 0 10px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       width: 100%;
       margin-bottom: 63px;
       padding: 0;
@@ -160,7 +175,7 @@ export default {
     display: none;
     z-index: 1;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: block;
     }
 
@@ -172,7 +187,7 @@ export default {
       z-index: 1;
       margin-top: -13px;
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-l) {
         display: none;
       }
     }
@@ -184,7 +199,7 @@ export default {
     width: 100%;
     height: 561px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       left: 35%;
       width: 725px;
       height: 725px;
@@ -194,7 +209,7 @@ export default {
   &__hand {
     display: none;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: block;
       position: absolute;
       z-index: -1;
@@ -204,8 +219,12 @@ export default {
   }
 
   &__content {
-    display: flex;
-    margin-bottom: 82px;
+    display: none;
+
+    @media (min-width: $screen-l) {
+      display: flex;
+      margin-bottom: 82px;
+    }
 
     &__ruler {
       margin-right: 5px;
@@ -261,7 +280,7 @@ export default {
     gap: 62px;
     padding: 64px 0 52px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 43px;
