@@ -20,9 +20,8 @@
         <div v-for="(row, i) in list" :key="i" class="benefits__list__row">
           <BaseListItem v-for="(item, i) in row" :key="i" :text="item" />
         </div>
-        <div class="benefits__button">
-          <BaseButton />
-        </div>
+
+        <BaseButton class="benefits__button" />
       </div>
     </div>
   </section>
@@ -43,14 +42,14 @@ export default {
     ],
     list: [
       [ '<span class="text_bold">Интеграция с любыми системами: </span><br>1С, SAP, Битрикс и др.',
-        '<span class="text_bold">Кросс-функциональные процессы:</span><br> связь с HR, бухгалтерией, логистикой, энергетиками,<br> складами и др.', ],
-      [ '<span class="text_bold">Индивидуальные модули</span><br> под ваши задачи, процессы и<br> подразделения',
-        '<span class="text_bold">Единоразовая покупка лицензии:</span><br> платите один раз и подключайте любое<br> количество сотрудников и подрядчиков', ],
-      [ '<span class="text_bold">Личные кабинеты</span> для руководителя,<br> работников, специалистов по ОТиПБ,<br> пожарной безопасности',
-        '<span class="text_bold">Автоматическая замена шаблонов</span><br> через 1 день после выхода изменений<br> законодательства', ],
-      [ '<span class="text_bold">Помощь юриста STAP</span> в спортных ситуациях,<br> если вы работаете по <br>нашим шаблонам',
+        '<span class="text_bold">Кросс-функциональные процессы:</span><br> связь с HR, бухгалтерией, логистикой, энергетиками, складами и др.', ],
+      [ '<span class="text_bold">Индивидуальные модули</span><br> под ваши задачи, процессы и подразделения',
+        '<span class="text_bold">Единоразовая покупка лицензии:</span><br> платите один раз и подключайте любое количество сотрудников и подрядчиков', ],
+      [ '<span class="text_bold">Личные кабинеты</span> для руководителя,<br> работников, специалистов по ОТиПБ, пожарной безопасности',
+        '<span class="text_bold">Автоматическая замена шаблонов</span><br> через 1 день после выхода изменений законодательства', ],
+      [ '<span class="text_bold">Помощь юриста STAP</span> в спортных ситуациях, если вы работаете по нашим шаблонам',
         '<span class="text_bold">Видео-обучение для сотрудников:</span><br> поможет за 1 час освоить новое ПО', ],
-      [ '<span class="text_bold">Если хотите частичную автоматизацию:</span><br> подскажем, как настроить работу охраны труда <br>и оставить некоторые бумажные журналы', ],
+      [ '<span class="text_bold">Если хотите частичную автоматизацию:</span><br> подскажем, как настроить работу охраны труда и оставить некоторые бумажные журналы', ],
     ]
   })
 }
@@ -59,28 +58,64 @@ export default {
 <style lang="scss">
 .benefits {
   position: relative;
-  padding: 106px 0 220px;
+  padding: 50px 0 52px;
   scroll-margin-top: $scroll-margin-top;
+
+  @media (min-width: $screen-l) {
+    padding: 106px 0 220px;
+  }
 
   &__list {
     position: relative;
 
     &__row {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0 147px;
-      padding: 24px 25px;
+      grid-template-columns: repeat(1, 1fr);
+
+      @media (min-width: $screen-l) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 147px;
+        padding: 24px 25px;
+      }
+
+      .base-list-item {
+        padding: 24px 25px;
+        border-radius: 10px;
+
+        @media (min-width: $screen-l) {
+          padding: 0;
+          border-radius: 0;
+        }
+
+        &:nth-child(2n) {
+          background: var(--color-bg-dark-blue);
+
+          @media (min-width: $screen-l) {
+            background: none;
+          }
+        }
+      }
 
       &:nth-child(2n) {
-        border-radius: 10px;
-        background: var(--color-bg-dark-blue);
+        @media (min-width: $screen-l) {
+          border-radius: 10px;
+          background: var(--color-bg-dark-blue);
+        }
       }
     }
   }
+
   &__button {
-    position: absolute;
-    right: 170px;
-    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: $screen-l) {
+      position: absolute;
+      right: 170px;
+      bottom: 0;
+      left: unset;
+      transform: translateX(0);
+    }
   }
 
   &__digits {

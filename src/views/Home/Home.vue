@@ -14,7 +14,7 @@
     <About />
     <HowWorks />
     <Description />
-    <!--    <Benefits />-->
+    <Benefits />
   </main>
 </template>
 
@@ -25,7 +25,7 @@ export default {
   name: "Home",
   components: {
     HeaderCards,
-    // Benefits: () => import("@/views/Home/components/Benefits/Benefits.vue"),
+    Benefits: () => import("@/views/Home/components/Benefits/Benefits.vue"),
     Description: () =>
       import("@/views/Home/components/Description/Description.vue"),
     HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
