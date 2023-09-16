@@ -1,7 +1,10 @@
 <template>
   <div class="nav-menu-mobile">
     <div class="wrap">
-      <NavLinks class="nav-menu-mobile__links" />
+      <NavLinks
+        class="nav-menu-mobile__links"
+        @closeMenu="$emit('closeMenu')"
+      />
     </div>
   </div>
 </template>
