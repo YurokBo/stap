@@ -16,6 +16,7 @@
     <Description />
     <Benefits />
     <Modules />
+    <Legal />
   </main>
 </template>
 
@@ -33,6 +34,7 @@ export default {
     About: () => import("@/views/Home/components/About/About.vue"),
     Header: () => import("@/views/Home/components/Header/Header.vue"),
     Modules: () => import("@/views/Home/components/Modules/Modules.vue"),
+    Legal: () => import("@/views/Home/components/Legal/Legal.vue"),
   },
 };
 </script>

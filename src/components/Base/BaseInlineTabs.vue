@@ -1,13 +1,18 @@
 <template>
   <div class="inline-tabs">
     <label
-      v-for="({ label, isChecked }, i) in tabs"
+      v-for="({ label, isChecked, id }, i) in tabs"
       :key="i"
       class="inline-tabs__tab"
-      :for="i"
+      :for="id"
       @click="$emit('content', i)"
     >
-      <input type="radio" name="tab-input" :id="i" :checked="isChecked" />
+      <input
+        type="radio"
+        :name="`tab-${tabName}`"
+        :id="id"
+        :checked="isChecked"
+      />
       <span>{{ label }}</span>
     </label>
   </div>
@@ -21,6 +26,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    tabName: {
+      type: String,
+      default: '',
+    }
   },
 }
 </script>

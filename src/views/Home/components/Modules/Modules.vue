@@ -10,7 +10,11 @@
           class="modules__divide-line_mobile"
         />
       </h2>
-      <BaseInlineTabs :tabs="inlineTabs" @content="tabContent" />
+      <BaseInlineTabs
+        :tabs="inlineTabs"
+        :tab-name="inlineTabName"
+        @content="tabContent"
+      />
       <p v-if="!index" class="modules__text">
         <span>Нужны одинаково для всех компаний:</span> модули не зависят от
         ниши и размера компании
@@ -54,9 +58,10 @@ export default {
   components: { BaseButton, ModulesCard, BaseInlineTabs, BaseLine },
   data: () => ({
     index: 0,
+    inlineTabName: 'modules',
     inlineTabs: [
-      {label: 'Основные', isChecked: true},
-      {label: 'Уникальные'},
+      {label: 'Основные', id: 'main', isChecked: true},
+      {label: 'Уникальные', id: 'unique'},
     ],
     cards: [
       [
