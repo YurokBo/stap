@@ -173,10 +173,10 @@ export default {
 
   &__divide-line {
     display: none;
-    z-index: 1;
 
     @media (min-width: $screen-l) {
       display: block;
+      z-index: 1;
     }
 
     &_mobile {

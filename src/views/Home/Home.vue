@@ -15,6 +15,7 @@
     <HowWorks />
     <Description />
     <Benefits />
+    <Modules />
   </main>
 </template>
 
@@ -31,6 +32,7 @@ export default {
     HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
     About: () => import("@/views/Home/components/About/About.vue"),
     Header: () => import("@/views/Home/components/Header/Header.vue"),
+    Modules: () => import("@/views/Home/components/Modules/Modules.vue"),
   },
 };
 </script>

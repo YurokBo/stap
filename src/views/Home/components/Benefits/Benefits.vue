@@ -15,6 +15,10 @@
           path="benefits/divide-line-benefits"
           class="benefits__divide-line"
         />
+        <BaseLine
+          path="benefits/divide-line-mobile"
+          class="benefits__divide-line_mobile"
+        />
       </h2>
       <div class="benefits__list">
         <div v-for="(row, i) in list" :key="i" class="benefits__list__row">
@@ -63,6 +67,28 @@ export default {
 
   @media (min-width: $screen-l) {
     padding: 106px 0 220px;
+  }
+
+  &__divide-line {
+    display: none;
+
+    @media (min-width: $screen-l) {
+      display: block;
+      z-index: 1;
+    }
+
+    &_mobile {
+      position: absolute;
+      left: 10px;
+      right: 0;
+      width: 100%;
+      z-index: 1;
+      margin-top: -13px;
+
+      @media (min-width: $screen-l) {
+        display: none;
+      }
+    }
   }
 
   &__list {
@@ -119,9 +145,13 @@ export default {
   }
 
   &__digits {
-    position: absolute;
-    top: -350px;
-    z-index: -1;
+    display: none;
+
+    @media (min-width: $screen-l) {
+      position: absolute;
+      top: -350px;
+      z-index: -1;
+    }
 
     &_left {
       left: 0;
