@@ -141,7 +141,7 @@ export default {
       position: absolute;
       left: 10px;
       right: 0;
-      width: 100%;
+      //width: 100%;
       z-index: 1;
       margin-top: -13px;
 

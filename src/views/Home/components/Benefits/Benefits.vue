@@ -69,6 +69,14 @@ export default {
     padding: 106px 0 220px;
   }
 
+  &__title {
+    margin-bottom: 40px;
+
+    @media (min-width: $screen-l) {
+      margin-bottom: 80px;
+    }
+  }
+
   &__divide-line {
     display: none;
 
@@ -81,7 +89,7 @@ export default {
       position: absolute;
       left: 10px;
       right: 0;
-      width: 100%;
+      //width: 100%;
       z-index: 1;
       margin-top: -13px;
 

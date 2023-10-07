@@ -34,15 +34,28 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .inline-tabs {
   display: flex;
-  justify-content: center;
+  overflow-y: hidden;
+  overflow-x: auto;
+  justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid var(--color-border);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  @media (min-width: $screen-l) {
+    justify-content: center;
+  }
 
   &__tab {
-    flex-grow: 1;
+    //flex-grow: 1;
     text-align: center;
     font-size: 16px;
 
@@ -53,14 +66,21 @@ export default {
     > input {
       position: absolute;
       opacity: 0;
+      margin: 0;
+      padding: 0;
+      border: none;
     }
 
     > span {
       position: relative;
       display: block;
-      width: 100%;
+      //width: 100%;
       padding: 8px;
       cursor: pointer;
+      //white-space: nowrap;
+      overflow: hidden;
+      //width: 20px;
+      //text-overflow: clip;
 
       @media (min-width: $screen-l) {
         padding: 16px;

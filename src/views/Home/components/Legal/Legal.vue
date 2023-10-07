@@ -36,9 +36,7 @@
           </div>
         </div>
       </div>
-      <!--      <div class="legal__button">-->
       <BaseButton :text="buttonText" class="legal__button" />
-      <!--      </div>-->
     </div>
   </section>
 </template>
@@ -112,6 +110,14 @@ export default {
     ],
     buttonText: 'Получить<br /> консультацию юриста',
   }),
+  computed: {
+    accordion() {
+      return this.tabs[this.currentTab].map((_, i) => ({
+        title: this.tabs[i],
+        content: this.tabsContent[i]
+      }))
+    }
+  },
   methods: {
     tabContent(index) {
       if(this.index === index) return;
@@ -127,7 +133,11 @@ export default {
 
 <style lang="scss">
 .legal {
-  padding: 131px 0;
+  display: none;
+  @media (min-width: $screen-l) {
+    display: block;
+    padding: 131px 0;
+  }
 
   &__title {
     margin-bottom: 40px;
@@ -149,7 +159,7 @@ export default {
       position: absolute;
       left: 10px;
       right: 0;
-      width: 100%;
+      //width: 100%;
       z-index: 1;
       margin-top: -13px;
 
@@ -160,32 +170,42 @@ export default {
   }
 
   &__content {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    padding: 59px 40px 18px;
+    display: none;
+
+    @media (min-width: $screen-l) {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 59px 40px 18px;
+    }
   }
 
   &__tabs {
-    display: flex;
-    flex-direction: column;
-    gap: 21px;
+    @media (min-width: $screen-l) {
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+    }
   }
 
   &__tab-content {
-    &__text {
-      padding: 21px 5px 21px 12px;
+    @media (min-width: $screen-l) {
+      &__text {
+        padding: 21px 5px 21px 12px;
 
-      &:nth-child(even) {
-        border-radius: 10px;
-        background: var(--color-bg-dark-blue);
+        &:nth-child(even) {
+          border-radius: 10px;
+          background: var(--color-bg-dark-blue);
+        }
       }
     }
   }
 
   &__button {
-    left: 100%;
-    transform: translateX(-130%);
+    @media (min-width: $screen-l) {
+      left: 100%;
+      transform: translateX(-130%);
+    }
   }
 }
 </style>

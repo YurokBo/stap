@@ -1,41 +1,25 @@
 <template>
-  <div class="description-accordion">
+  <div class="legal-accordion">
     <button
-      class="text_large description-accordion__head"
-      :class="{ 'description-accordion__head_active': isOpen }"
+      class="text_large legal-accordion__head"
+      :class="{ 'legal-accordion__head_active': isOpen }"
       v-html="title"
       @click="isOpen = !isOpen"
     />
     <transition name="slide-fade">
-      <div v-show="isOpen" class="description-accordion__body">
-        <img
-          src="@/assets/img/description/ruler-small.svg"
-          alt="ruler"
-          class="description-accordion__ruler"
-        />
-        <ul class="description-accordion__list">
-          <li
-            v-for="(item, i) in content"
-            :key="i"
-            class="description-accordion__item"
-          >
-            <BaseNumber :is-size-large="false" :number="i + 1" />
-            <p class="text">
-              {{ item }}
-            </p>
-          </li>
-        </ul>
+      <div v-show="isOpen" class="legal-accordion__body">
+        <BaseListItem v-for="(item, i) in content" :key="i" :text="item" />
       </div>
     </transition>
   </div>
 </template>
 
 <script lang="js">
-import BaseNumber from "@/components/Base/BaseNumber.vue";
+import BaseListItem from "@/components/Base/BaseListItem.vue";
 
 export default {
-  name: 'DescriptionAccordion',
-  components: { BaseNumber },
+  name: 'LegalAccordion',
+  components: { BaseListItem },
   props: {
     title: {
       type: String,
@@ -53,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss">
-.description-accordion {
+.legal-accordion {
   @media (min-width: $screen-l) {
     display: none;
   }
