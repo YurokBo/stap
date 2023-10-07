@@ -24,7 +24,6 @@
         <div v-for="(row, i) in list" :key="i" class="benefits__list__row">
           <BaseListItem v-for="(item, i) in row" :key="i" :text="item" />
         </div>
-
         <BaseButton class="benefits__button" />
       </div>
     </div>
@@ -89,7 +88,6 @@ export default {
       position: absolute;
       left: 10px;
       right: 0;
-      //width: 100%;
       z-index: 1;
       margin-top: -13px;
 
