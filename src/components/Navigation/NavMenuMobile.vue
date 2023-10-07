@@ -1,7 +1,10 @@
 <template>
   <div class="nav-menu-mobile">
     <div class="wrap">
-      <NavLinks class="nav-menu-mobile__links" />
+      <NavLinks
+        class="nav-menu-mobile__links"
+        @closeMenu="$emit('closeMenu')"
+      />
     </div>
   </div>
 </template>
@@ -39,7 +42,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     font-size: 20px;
     font-weight: 300;
 

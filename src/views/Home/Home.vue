@@ -15,6 +15,8 @@
     <HowWorks />
     <Description />
     <Benefits />
+    <Modules />
+    <Legal />
   </main>
 </template>
 
@@ -31,6 +33,8 @@ export default {
     HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
     About: () => import("@/views/Home/components/About/About.vue"),
     Header: () => import("@/views/Home/components/Header/Header.vue"),
+    Modules: () => import("@/views/Home/components/Modules/Modules.vue"),
+    Legal: () => import("@/views/Home/components/Legal/Legal.vue"),
   },
 };
 </script>
@@ -39,7 +43,7 @@ export default {
   &__header-cards {
     position: relative;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: none;
     }
 

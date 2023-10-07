@@ -47,10 +47,10 @@ export default {
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    width: 561px;
+    width: 100%;
     height: 561px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       top: 283px;
       transform: translateX(-60%);
       width: 945px;
@@ -68,7 +68,7 @@ export default {
   &__digits {
     display: none;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: block;
       position: absolute;
       top: -45px;
@@ -89,7 +89,7 @@ export default {
     margin: 0 auto;
     text-align: center;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       width: 800px;
     }
 
@@ -101,7 +101,7 @@ export default {
   &__description {
     display: none;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: flex;
 
       &_mobile {

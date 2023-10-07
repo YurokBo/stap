@@ -13,6 +13,10 @@
           path="description/divide-line-description"
           class="description__divide-line"
         />
+        <BaseLine
+          path="description/divide-line-description-mobile"
+          class="description__divide-line_mobile"
+        />
       </h2>
       <div class="description__content">
         <div class="description__tabs">
@@ -42,6 +46,12 @@
           </div>
         </div>
       </div>
+      <DescriptionAccordion
+        v-for="({ title, content }, i) in accordion"
+        :key="i"
+        :title="title"
+        :content="content"
+      />
       <div class="description__cards">
         <DescriptionCard
           v-for="(text, i) in cards"
@@ -59,10 +69,11 @@ import BaseLine from "@/components/Base/BaseLine.vue";
 import BaseTabs from "@/components/Base/BaseTabs.vue";
 import BaseNumber from "@/components/Base/BaseNumber.vue";
 import DescriptionCard from "@/views/Home/components/Description/DescriptionCard.vue";
+import DescriptionAccordion from "@/views/Home/components/Description/DescriptionAccordion.vue";
 
 export default {
   name: 'Description',
-  components: { DescriptionCard, BaseNumber, BaseTabs, BaseLine },
+  components: { DescriptionAccordion, DescriptionCard, BaseNumber, BaseTabs, BaseLine },
   data: () => ({
     currentTab: 0,
     show: false,
@@ -124,6 +135,14 @@ export default {
       'В 1, 2 и более <br />локациях'
     ]
   }),
+  computed: {
+    accordion() {
+      return this.tabs.map((_, i) => ({
+        title: this.tabs[i],
+        content: this.tabContent[i]
+      }))
+    }
+  },
   methods: {
     changeTab(count) {
       return this.currentTab = count;
@@ -141,26 +160,71 @@ export default {
   }
 
   &__title {
-    margin-bottom: 63px;
+    position: relative;
+    margin-bottom: 51px;
+    padding: 0 50px 0 10px;
+
+    @media (min-width: $screen-l) {
+      width: 100%;
+      margin-bottom: 63px;
+      padding: 0;
+    }
+  }
+
+  &__divide-line {
+    display: none;
+
+    @media (min-width: $screen-l) {
+      display: block;
+      z-index: 1;
+    }
+
+    &_mobile {
+      position: absolute;
+      left: 10px;
+      right: 0;
+      width: 100%;
+      z-index: 1;
+      margin-top: -13px;
+
+      @media (min-width: $screen-l) {
+        display: none;
+      }
+    }
   }
 
   &__ellipse-light {
-    top: 170px;
-    left: 35%;
-    width: 725px;
-    height: 725px;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 561px;
+
+    @media (min-width: $screen-l) {
+      left: 35%;
+      width: 725px;
+      height: 725px;
+    }
   }
 
   &__hand {
-    position: absolute;
-    z-index: -1;
-    top: 50px;
-    right: 0;
+    display: none;
+
+    @media (min-width: $screen-l) {
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 50px;
+      right: 0;
+    }
   }
 
   &__content {
-    display: flex;
-    margin-bottom: 82px;
+    display: none;
+
+    @media (min-width: $screen-l) {
+      display: flex;
+      margin-bottom: 82px;
+    }
 
     &__ruler {
       margin-right: 5px;
@@ -212,8 +276,16 @@ export default {
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 43px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 62px;
+    padding: 64px 0 52px;
+
+    @media (min-width: $screen-l) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 43px;
+      padding: 0;
+    }
   }
 }
 </style>

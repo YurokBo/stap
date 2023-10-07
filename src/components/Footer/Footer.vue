@@ -3,22 +3,25 @@
     <div class="wrap footer__wrap">
       <div class="footer__content">
         <Logo class="footer__logo" />
-        <RequisitesText />
-      </div>
-      <div class="footer__links">
-        <a
-          v-for="(link, i) in links"
+        <RequisitesText class="footer__requisites-text" />
+        <FooterSocials
+          v-for="({ href, icon }, i) in links"
           :key="i"
-          :href="link.link"
-          target="_blank"
-          class="footer__links__social"
-        >
-          <img
-            :src="require(`@/assets/img/icons/${link.icon}.png`)"
-            alt="social icon"
-          />
-        </a>
-        <router-link to="/" class="text_small text_small footer__links__policy">
+          :href="href"
+          :icon="icon"
+          class="footer__socials_mobile"
+        />
+      </div>
+      <RequisitesText class="footer__requisites-text_mobile" />
+      <div class="footer__links">
+        <FooterSocials
+          v-for="({ href, icon }, i) in links"
+          :key="i"
+          :href="href"
+          :icon="icon"
+          class="footer__socials"
+        />
+        <router-link to="/" class="footer__links__policy">
           Политика конфиденциальности
         </router-link>
       </div>
@@ -29,15 +32,16 @@
 <script lang="js">
 import Logo from "@/components/Logo/Logo.vue";
 import RequisitesText from "@/components/RequisitesText/RequisitesText.vue";
+import FooterSocials from "@/components/Footer/FooterSocials.vue";
 
 export default {
   name: 'Footer',
-  components: { RequisitesText, Logo },
+  components: { FooterSocials, RequisitesText, Logo },
   data: () => ({
     links: [
-      {icon: 'vk', link: '#'},
-      {icon: 'tg', link: '#'},
-      {icon: 'in', link: '#'},
+      {icon: 'vk', href: '#'},
+      {icon: 'tg', href: '#'},
+      {icon: 'in', href: '#'},
     ]
   })
 }
@@ -45,14 +49,23 @@ export default {
 
 <style lang="scss">
 .footer {
-  padding: 60px 0;
+  padding: 40px 9px;
   font-weight: 400;
   color: var(--color-text-grey);
 
+  @media (min-width: $screen-l) {
+    padding: 60px 0;
+  }
+
   &__wrap {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+
+    @media (min-width: $screen-l) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__content,
@@ -61,25 +74,55 @@ export default {
     align-items: center;
   }
 
+  &__content {
+    justify-content: space-between;
+    margin-bottom: 51px;
+
+    @media (min-width: $screen-l) {
+      justify-content: initial;
+      margin-bottom: 0;
+    }
+  }
+
   &__logo {
     margin-right: 52px;
   }
 
   &__links {
-    &__social {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 44px;
-      height: 44px;
-
-      &:not(:first-child) {
-        margin-left: 21px;
+    &__policy {
+      font-size: 14px;
+      @media (min-width: $screen-l) {
+        margin-left: 53px;
       }
     }
+  }
 
-    &__policy {
-      margin-left: 53px;
+  &__requisites-text {
+    display: none;
+    @media (min-width: $screen-l) {
+      display: block;
+    }
+
+    &_mobile {
+      margin-bottom: 32px;
+
+      @media (min-width: $screen-l) {
+        display: none;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__socials {
+    display: none;
+    @media (min-width: $screen-l) {
+      display: block;
+    }
+
+    &_mobile {
+      @media (min-width: $screen-l) {
+        display: none;
+      }
     }
   }
 }

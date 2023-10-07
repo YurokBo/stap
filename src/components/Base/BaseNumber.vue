@@ -32,8 +32,12 @@ export default {
   font-weight: 400;
 
   &_large {
-    font-size: 52px;
+    font-size: 22px;
     line-height: 0.77;
+
+    @media (min-width: $screen-l) {
+      font-size: 52px;
+    }
   }
 
   &_small {

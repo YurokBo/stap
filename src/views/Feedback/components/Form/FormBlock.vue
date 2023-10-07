@@ -1,5 +1,5 @@
 <template>
-  <div class="form-block">
+  <div v-if="!isSendSuccess" class="form-block">
     <h3 class="title title_h1 form-block__title">
       <span class="colored-el"> успейте</span> занять место
     </h3>
@@ -8,12 +8,7 @@
         <div class="form-block__column">
           <div class="form-block__row">
             <div class="form-block__field">
-              <span
-                v-if="
-                  $v.formData.company.$error && !$v.formData.company.required
-                "
-                class="form-block__field__error"
-              >
+              <span v-if="isError('company')" class="form-block__field__error">
                 Введите название компании
               </span>
               <input
@@ -22,16 +17,12 @@
                 placeholder="Название компании *"
                 v-model.trim="formData.company"
                 :class="{
-                  'input-error':
-                    $v.formData.company.$error && !$v.formData.company.required,
+                  'input-error': isError('company'),
                 }"
               />
             </div>
             <div class="form-block__field">
-              <span
-                v-if="$v.formData.link.$error && !$v.formData.link.required"
-                class="form-block__field__error"
-              >
+              <span v-if="isError('link')" class="form-block__field__error">
                 Введите сайт или соцсети
               </span>
               <input
@@ -40,18 +31,14 @@
                 placeholder="Сайт или соцсети компании *"
                 v-model.trim="formData.link"
                 :class="{
-                  'input-error':
-                    $v.formData.link.$error && !$v.formData.link.required,
+                  'input-error': isError('link'),
                 }"
               />
             </div>
           </div>
           <div class="form-block__row">
             <div class="form-block__field">
-              <span
-                v-if="$v.formData.name.$error && !$v.formData.name.required"
-                class="form-block__field__error"
-              >
+              <span v-if="isError('name')" class="form-block__field__error">
                 Введите фаше ФИО
               </span>
               <input
@@ -60,18 +47,12 @@
                 placeholder="Ваше ФИО *"
                 v-model.trim="formData.name"
                 :class="{
-                  'input-error':
-                    $v.formData.name.$error && !$v.formData.name.required,
+                  'input-error': isError('name'),
                 }"
               />
             </div>
             <div class="form-block__field">
-              <span
-                v-if="
-                  $v.formData.position.$error && !$v.formData.position.required
-                "
-                class="form-block__field__error"
-              >
+              <span v-if="isError('position')" class="form-block__field__error">
                 Введите вашу должность
               </span>
               <input
@@ -80,19 +61,14 @@
                 placeholder="Ваша должность *"
                 v-model.trim="formData.position"
                 :class="{
-                  'input-error':
-                    $v.formData.position.$error &&
-                    !$v.formData.position.required,
+                  'input-error': isError('position'),
                 }"
               />
             </div>
           </div>
           <div class="form-block__row">
             <div class="form-block__field">
-              <span
-                v-if="$v.formData.phone.$error"
-                class="form-block__field__error"
-              >
+              <span v-if="isError('phone')" class="form-block__field__error">
                 Введите ваш номер телефона
               </span>
               <input
@@ -101,15 +77,12 @@
                 placeholder="Ваш номер телефона *"
                 v-model.trim="formData.phone"
                 :class="{
-                  'input-error': $v.formData.phone.$error,
+                  'input-error': isError('phone'),
                 }"
               />
             </div>
             <div class="form-block__field">
-              <span
-                v-if="$v.formData.email.$error"
-                class="form-block__field__error"
-              >
+              <span v-if="isError('email')" class="form-block__field__error">
                 Введите корректный email
               </span>
               <input
@@ -118,17 +91,14 @@
                 placeholder="Ваш E-mail *"
                 v-model.trim="formData.email"
                 :class="{
-                  'input-error': $v.formData.email.$error,
+                  'input-error': isError('email'),
                 }"
               />
             </div>
           </div>
         </div>
         <div class="form-block__field form-block__field_message">
-          <span
-            class="text form-block__field__error"
-            v-if="$v.formData.message.$error && !$v.formData.message.required"
-          >
+          <span class="text form-block__field__error" v-if="isError('message')">
             Расскажите о компании
           </span>
           <textarea
@@ -136,8 +106,7 @@
             placeholder="Расскажите, в чем сейчас трудности? Что хотите улучшить? *"
             v-model.trim="formData.message"
             :class="{
-              'input-error':
-                $v.formData.message.$dirty && !$v.formData.email.required,
+              'input-error': isError('message'),
             }"
           />
         </div>
@@ -164,17 +133,21 @@
       </button>
     </form>
   </div>
+  <FormSend v-else class="form-block-success" />
 </template>
 
 <script lang="js">
 import { validationMixin } from "vuelidate";
 import { email, numeric, required } from "vuelidate/lib/validators";
 import axios from 'axios';
+import FormSend from "@/views/Feedback/components/Form/FormSend.vue";
 
 export default {
   name: 'FormBlock',
+  components: { FormSend },
   mixins: [ validationMixin ],
   data: () => ({
+    isSendSuccess: false,
     formData: {
       company: '',
       link: '',
@@ -217,6 +190,9 @@ export default {
     }
   },
   methods: {
+    isError(field) {
+      return this.$v.formData[field].$dirty && !this.$v.formData[field].required
+    },
     async onSubmit() {
       this.$v.formData.$touch();
       if (this.$v.formData.$error) return;
@@ -235,8 +211,11 @@ export default {
         })
 
         this.$nextTick(() => {
-          this.$v.$reset()
+          this.isSendSuccess = true;
+          this.$v.$reset();
         })
+      }).finally(() => {
+        setTimeout(() => this.isSendSuccess = false, 5000);
       })
     }
   }
@@ -245,41 +224,76 @@ export default {
 
 <style lang="scss">
 .form-block {
-  &__title {
-    margin-bottom: 40px;
+  padding: 48px 16px 68px;
+  background-image: url(~@/assets/img/form/form-block-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+
+  @media (min-width: $screen-l) {
+    background-image: none;
   }
 
-  &__form {
+  &__title {
+    margin-bottom: 40px;
+    font-size: 20px;
+
+    @media (min-width: $screen-l) {
+      font-size: 32px;
+    }
   }
 
   &__content {
     display: flex;
+    flex-direction: column;
     align-items: stretch;
     margin-bottom: 21px;
+
+    @media (min-width: $screen-l) {
+      flex-direction: row;
+      align-items: stretch;
+    }
   }
 
   &__column {
-    margin-right: 16px;
+    @media (min-width: $screen-l) {
+      margin-right: 16px;
+    }
   }
 
   &__row {
     display: flex;
-    gap: 13px;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 17px;
+
+    @media (min-width: $screen-l) {
+      flex-direction: row;
+      gap: 13px;
+      margin-bottom: 0;
+    }
 
     &:not(:last-child) {
-      margin-bottom: 22px;
+      @media (min-width: $screen-l) {
+        margin-bottom: 22px;
+      }
     }
-  }
-
-  &__fields {
   }
 
   &__field {
     position: relative;
-    width: 315px;
+
+    @media (min-width: $screen-l) {
+      width: 315px;
+    }
 
     &_message {
-      width: 432px;
+      height: 194px;
+
+      @media (min-width: $screen-l) {
+        width: 432px;
+        height: auto;
+      }
     }
 
     &__error {
@@ -327,10 +341,11 @@ export default {
 
   &__control {
     position: relative;
-    padding-left: 32px;
     cursor: pointer;
 
     &__text {
+      display: block;
+      padding-left: 32px;
       line-height: 1.2;
     }
 
@@ -392,6 +407,14 @@ export default {
     &:active {
       scale: 0.95;
     }
+  }
+}
+
+.form-block-success {
+  @media (min-width: $screen-l) {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 </style>

@@ -1,7 +1,16 @@
 <template>
   <div class="base-list-item">
-    <img src="@/assets/img/icons/arrow-right.svg" alt="arrow right" />
-    <p v-html="text" class="text text_large"></p>
+    <img
+      src="@/assets/img/icons/arrow-right.svg"
+      alt="arrow right"
+      class="base-list-item__arrow"
+    />
+    <img
+      src="@/assets/img/icons/arrow-right-small.svg"
+      alt="arrow right"
+      class="base-list-item__arrow_mobile"
+    />
+    <p v-html="text" class="text" />
   </div>
 </template>
 
@@ -21,9 +30,28 @@ export default {
 .base-list-item {
   display: flex;
   align-items: center;
+  font-size: 14px;
 
-  > img {
-    margin-right: 32px;
+  @media (min-width: $screen-l) {
+    font-size: 20px;
+  }
+
+  &__arrow {
+    display: none;
+
+    @media (min-width: $screen-l) {
+      display: block;
+      margin-right: 32px;
+    }
+
+    &_mobile {
+      margin-right: 21px;
+
+      @media (min-width: $screen-l) {
+        display: none;
+        margin-right: 0;
+      }
+    }
   }
 }
 </style>

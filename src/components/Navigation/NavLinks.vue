@@ -27,6 +27,7 @@ export default {
   methods: {
     scrollFix(hash) {
       location.hash = hash;
+      this.$emit('closeMenu');
     }
   }
 };

@@ -14,7 +14,10 @@
         <span /><span /><span />
       </button>
     </div>
-    <NavMenuMobile :class="{ 'nav-menu-mobile_active': isOpen }" />
+    <NavMenuMobile
+      :class="{ 'nav-menu-mobile_active': isOpen }"
+      @closeMenu="openMobileMenu"
+    />
   </div>
 </template>
 

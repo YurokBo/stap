@@ -32,7 +32,7 @@ export default {
     font-size: 14px;
     text-align: center;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       display: initial;
       width: initial;
       height: initial;

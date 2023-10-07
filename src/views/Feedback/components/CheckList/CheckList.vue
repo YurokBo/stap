@@ -7,12 +7,13 @@
         избежать судов:
       </h2>
       <div class="check-list__content">
-        <img src="@/assets/img/check-list/ruler.svg" alt="ruler" />
-        <div class="check-list__content__items">
+        <img src="@/assets/img/check-list/ruler.svg" alt="ruler" class="check-list__ruler" />
+        <img src="@/assets/img/check-list/ruler-mobile.svg" alt="ruler" class="check-list__ruler_mobile" />
+        <div class="check-list__items">
           <div
             v-for="(item, i) in checkList"
             :key="i"
-            class="check-list__content__item"
+            class="check-list__item"
           >
             <BaseNumber :number="i + 1" is-size-large />
             <p class="text text_medium" v-html="item" />
@@ -36,10 +37,10 @@ export default {
   components: { BaseNumber },
   data: () => ({
     checkList: [
-      'Перечень обязательных <span class="text_bold">документов компании</span><br> по законодательству',
-      '<span class="text_bold">Проверка готовности компании</span><br> к автоматизации',
-      'Какие <span class="text_bold">документы по обучению работников</span><br> можно вести в электронном формате',
-      'Какие <span class="text_bold">документы по медосмотрам</span><br> работников можно вести в электронном формате',
+      'Перечень обязательных <span class="text_bold">документов компании</span> по законодательству',
+      '<span class="text_bold">Проверка готовности компании</span> к автоматизации',
+      'Какие <span class="text_bold">документы по обучению работников</span> можно вести в электронном формате',
+      'Какие <span class="text_bold">документы по медосмотрам</span> работников можно вести в электронном формате',
     ]
   })
 }
@@ -48,7 +49,11 @@ export default {
 <style lang="scss">
 .check-list {
   position: relative;
-  padding: 107px 0 66px;
+  padding: 527px 0 50px;
+
+  @media (min-width: $screen-l) {
+    padding: 107px 0 66px;
+  }
 
   &__title {
     margin-bottom: 30px;
@@ -58,29 +63,57 @@ export default {
   &__content {
     display: flex;
     align-items: center;
-    max-width: 865px;
+    max-width: 565px;
+  }
 
-    &__items {
-      display: flex;
-      flex-direction: column;
+  &__items {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+    @media (min-width: $screen-l) {
       gap: 64px 0;
-      margin-left: 10px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    padding: 20px 0;
+
+    @media (min-width: $screen-l) {
+      align-items: center;
+      padding: 0;
     }
 
-    &__item {
-      display: flex;
-      align-items: center;
-
-      > p {
-        margin-left: 8px;
-      }
+    > p {
+      margin-left: 20px;
     }
   }
 
   &__img {
     position: absolute;
+    top: 70px;
     right: 0;
-    bottom: 0;
+
+    @media (min-width: $screen-l) {
+      top: unset;
+      bottom: 0;
+    }
+  }
+
+  &__ruler {
+    display: none;
+
+    @media (min-width: $screen-l) {
+      display: block;
+    }
+
+    &_mobile {
+      margin-top: -50px;
+      @media (min-width: $screen-l) {
+        display: none;
+      }
+    }
   }
 }
 </style>
