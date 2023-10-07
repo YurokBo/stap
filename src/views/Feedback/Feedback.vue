@@ -3,7 +3,7 @@
     <Header />
     <FeedbackHeaderList class="feedback__header-list"/>
     <CheckList />
-<!--    <Form />-->
+    <Form />
   </main>
 </template>
 
@@ -11,13 +11,13 @@
 import Header from "@/views/Feedback/components/Header/FeedbackHeader.vue";
 import FeedbackHeaderList from "@/views/Feedback/components/Header/FeedbackHeaderList.vue";
 import CheckList from "@/views/Feedback/components/CheckList/CheckList.vue";
-// import Form from "@/views/Feedback/components/Form/Form.vue";
+import Form from "@/views/Feedback/components/Form/Form.vue";
 
 export default  {
   name: "Feedback",
   components: {
     FeedbackHeaderList,
-    /* Form, */ CheckList, Header }
+     Form,  CheckList, Header }
 }
 </script>
 

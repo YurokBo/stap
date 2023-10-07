@@ -217,41 +217,76 @@ export default {
 
 <style lang="scss">
 .form-block {
-  &__title {
-    margin-bottom: 40px;
+  padding: 48px 16px 68px;
+  background-image: url(~@/assets/img/form/form-block-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+
+  @media (min-width: $screen-l) {
+    background-image: none;
   }
 
-  &__form {
+  &__title {
+    margin-bottom: 40px;
+    font-size: 20px;
+
+    @media (min-width: $screen-l) {
+      font-size: 32px;
+    }
   }
 
   &__content {
     display: flex;
+    flex-direction: column;
     align-items: stretch;
     margin-bottom: 21px;
+
+    @media (min-width: $screen-l) {
+      flex-direction: row;
+      align-items: stretch;
+    }
   }
 
   &__column {
-    margin-right: 16px;
+    @media (min-width: $screen-l) {
+      margin-right: 16px;
+    }
   }
 
   &__row {
     display: flex;
-    gap: 13px;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 17px;
+
+    @media (min-width: $screen-l) {
+      flex-direction: row;
+      gap: 13px;
+      margin-bottom: 0;
+    }
 
     &:not(:last-child) {
-      margin-bottom: 22px;
+      @media (min-width: $screen-l) {
+        margin-bottom: 22px;
+      }
     }
-  }
-
-  &__fields {
   }
 
   &__field {
     position: relative;
-    width: 315px;
+
+    @media (min-width: $screen-l) {
+      width: 315px;
+    }
 
     &_message {
-      width: 432px;
+      height: 194px;
+
+      @media (min-width: $screen-l) {
+        width: 432px;
+        height: auto;
+      }
     }
 
     &__error {
@@ -299,10 +334,11 @@ export default {
 
   &__control {
     position: relative;
-    padding-left: 32px;
     cursor: pointer;
 
     &__text {
+      display: block;
+      padding-left: 32px;
       line-height: 1.2;
     }
 
