@@ -24,7 +24,9 @@
         <div v-for="(row, i) in list" :key="i" class="benefits__list__row">
           <BaseListItem v-for="(item, i) in row" :key="i" :text="item" />
         </div>
-        <BaseButton class="benefits__button" />
+        <div class="benefits__button">
+          <BaseButton />
+        </div>
       </div>
     </div>
   </section>
@@ -138,8 +140,9 @@ export default {
   }
 
   &__button {
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (min-width: $screen-l) {
       position: absolute;

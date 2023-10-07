@@ -50,9 +50,9 @@ export default {
     height: 0;
   }
 
-  @media (min-width: $screen-l) {
-    justify-content: center;
-  }
+  //@media (min-width: $screen-l) {
+  //  justify-content: center;
+  //}
 
   &__tab {
     //flex-grow: 1;
