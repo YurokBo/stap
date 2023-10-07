@@ -1,5 +1,5 @@
 <template>
-  <div class="form-block">
+  <div v-if="!isSendSuccess" class="form-block">
     <h3 class="title title_h1 form-block__title">
       <span class="colored-el"> успейте</span> занять место
     </h3>
@@ -133,17 +133,21 @@
       </button>
     </form>
   </div>
+  <FormSend v-else class="form-block-success" />
 </template>
 
 <script lang="js">
 import { validationMixin } from "vuelidate";
 import { email, numeric, required } from "vuelidate/lib/validators";
 import axios from 'axios';
+import FormSend from "@/views/Feedback/components/Form/FormSend.vue";
 
 export default {
   name: 'FormBlock',
+  components: { FormSend },
   mixins: [ validationMixin ],
   data: () => ({
+    isSendSuccess: false,
     formData: {
       company: '',
       link: '',
@@ -207,8 +211,11 @@ export default {
         })
 
         this.$nextTick(() => {
-          this.$v.$reset()
+          this.isSendSuccess = true;
+          this.$v.$reset();
         })
+      }).finally(() => {
+        setTimeout(() => this.isSendSuccess = false, 5000);
       })
     }
   }
@@ -400,6 +407,14 @@ export default {
     &:active {
       scale: 0.95;
     }
+  }
+}
+
+.form-block-success {
+  @media (min-width: $screen-l) {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 </style>
