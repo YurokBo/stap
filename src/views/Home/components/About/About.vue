@@ -41,7 +41,7 @@ export default {
 .about {
   position: relative;
   padding: 82px 0 44px;
-  scroll-margin-top: $scroll-margin-top;
+  scroll-margin-top: calc($scroll-margin-top + 80px);
 
   &__ellipse-light {
     top: -100px;

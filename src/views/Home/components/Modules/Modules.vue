@@ -105,6 +105,12 @@ export default {
 
 <style lang="scss">
 .modules {
+  scroll-margin-top: calc($scroll-margin-top + 80px);
+
+  @media (min-width: $screen-l) {
+    padding: 110px 0 0;
+  }
+
   &__wrap {
     position: relative;
   }

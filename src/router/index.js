@@ -16,17 +16,31 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "@/views/Feedback/Feedback.vue"),
   },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: {
+      name: "Home",
+    },
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        selector: to.hash,
+        behavior: "smooth",
+      };
+    }
+    return {
+      x: 0,
+      y: 0,
+      behavior: "smooth",
+    };
+  },
   routes,
-  scrollBehavior: () => ({
-    x: 0,
-    y: 0,
-    behavior: "smooth",
-  }),
 });
 
 export default router;

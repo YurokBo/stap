@@ -111,7 +111,7 @@ export default {
 <style lang="scss">
 .how-works {
   padding: 0 0 56px;
-  scroll-margin-top: $scroll-margin-top;
+  scroll-margin-top: calc($scroll-margin-top + 80px);
 
   @media (min-width: $screen-l) {
     padding: 0 0 77px;

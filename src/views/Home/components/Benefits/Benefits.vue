@@ -64,10 +64,10 @@ export default {
 .benefits {
   position: relative;
   padding: 50px 0 52px;
-  scroll-margin-top: $scroll-margin-top;
+  scroll-margin-top: calc($scroll-margin-top + 80px);
 
   @media (min-width: $screen-l) {
-    padding: 106px 0 220px;
+    padding: 106px 0 110px;
   }
 
   &__title {

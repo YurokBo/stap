@@ -134,6 +134,8 @@ export default {
 <style lang="scss">
 .legal {
   display: none;
+  scroll-margin-top: calc($scroll-margin-top - 40px);
+
   @media (min-width: $screen-l) {
     display: block;
     padding: 131px 0;

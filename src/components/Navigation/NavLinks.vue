@@ -17,15 +17,16 @@ export default {
   name: "NavLinks",
   data: () => ({
     navLinks: [
-      { title: "Консультация", link: "" },
+      { title: "Консультация", link: "legal" },
       { title: "АИСОТ", link: "about" },
       { title: "Как работаем", link: "works" },
       { title: "Преимущества", link: "benefits" },
-      { title: "Модули", link: "" },
+      { title: "Модули", link: "modules" },
     ],
   }),
   methods: {
     scrollFix(hash) {
+      console.log(hash)
       location.hash = hash;
       this.$emit('closeMenu');
     }
@@ -49,6 +50,7 @@ export default {
       font-size: 14px;
       font-weight: 500;
       color: var(--color-text-grey);
+      text-align: center;
       cursor: pointer;
 
       &:before {
