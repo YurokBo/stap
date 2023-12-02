@@ -26,7 +26,6 @@ export default {
   }),
   methods: {
     scrollFix(hash) {
-      console.log(hash)
       location.hash = hash;
       this.$emit('closeMenu');
     }
