@@ -14,14 +14,14 @@
 
 <script lang="js">
 export default {
-  name: "NavLinks",
+  name: 'NavLinks',
   data: () => ({
     navLinks: [
-      { title: "Консультация", link: "legal" },
-      { title: "АИСОТ", link: "about" },
-      { title: "Как работаем", link: "works" },
-      { title: "Преимущества", link: "benefits" },
-      { title: "Модули", link: "modules" },
+      { title: 'Консультация', link: 'legal' },
+      { title: 'АИСОТ', link: 'about' },
+      { title: 'Как работаем', link: 'works' },
+      { title: 'Преимущества', link: 'benefits' },
+      { title: 'Модули', link: 'modules' },
     ],
   }),
   methods: {

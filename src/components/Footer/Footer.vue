@@ -30,9 +30,9 @@
 </template>
 
 <script lang="js">
-import Logo from "@/components/Logo/Logo.vue";
-import RequisitesText from "@/components/RequisitesText/RequisitesText.vue";
-import FooterSocials from "@/components/Footer/FooterSocials.vue";
+import Logo from '@/components/Logo/Logo.vue';
+import RequisitesText from '@/components/RequisitesText/RequisitesText.vue';
+import FooterSocials from '@/components/Footer/FooterSocials.vue';
 
 export default {
   name: 'Footer',

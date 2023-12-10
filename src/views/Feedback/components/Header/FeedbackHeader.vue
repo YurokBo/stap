@@ -21,9 +21,9 @@
 </template>
 
 <script lang="js">
-import BaseLine from "@/components/Base/BaseLine.vue";
-import BasePeriod from "@/components/Base/BasePeriod.vue";
-import FeedbackHeaderList from "@/views/Feedback/components/Header/FeedbackHeaderList.vue";
+import BaseLine from '@/components/Base/BaseLine.vue';
+import BasePeriod from '@/components/Base/BasePeriod.vue';
+import FeedbackHeaderList from '@/views/Feedback/components/Header/FeedbackHeaderList.vue';
 
 export default {
   name: 'FeedbackHeader',

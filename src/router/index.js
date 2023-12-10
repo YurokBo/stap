@@ -1,43 +1,43 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "@/views/Home/Home.vue";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '@/views/Home/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: Home,
   },
   {
-    path: "/feedback",
-    name: "Feedback",
+    path: '/feedback',
+    name: 'Feedback',
     component: () =>
-      import(/* webpackChunkName: "about" */ "@/views/Feedback/Feedback.vue"),
+      import(/* webpackChunkName: "about" */ '@/views/Feedback/Feedback.vue'),
   },
   {
-    path: "/:pathMatch(.*)*",
+    path: '/:pathMatch(.*)*',
     redirect: {
-      name: "Home",
+      name: 'Home',
     },
   },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   scrollBehavior(to) {
     if (to.hash) {
       return {
         selector: to.hash,
-        behavior: "smooth",
+        behavior: 'smooth',
       };
     }
     return {
       x: 0,
       y: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     };
   },
   routes,

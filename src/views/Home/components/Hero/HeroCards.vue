@@ -6,7 +6,7 @@
 
 <script lang="js">
 
-import HeroCard from "@/views/Home/components/Hero/HeroCard.vue";
+import HeroCard from '@/views/Home/components/Hero/HeroCard.vue';
 
 export default {
   name: 'HeroCards',

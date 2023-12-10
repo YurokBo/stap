@@ -137,10 +137,10 @@
 </template>
 
 <script lang="js">
-import { validationMixin } from "vuelidate";
-import { email, numeric, required } from "vuelidate/lib/validators";
+import { validationMixin } from 'vuelidate';
+import { email, numeric, required } from 'vuelidate/lib/validators';
 import axios from 'axios';
-import FormSend from "@/views/Feedback/components/Form/FormSend.vue";
+import FormSend from '@/views/Feedback/components/Form/FormSend.vue';
 
 export default {
   name: 'FormBlock',
@@ -198,7 +198,7 @@ export default {
       if (this.$v.formData.$error) return;
 
       await axios.post(
-        "/mail.php",
+        '/mail.php',
         this.formData,
         {
           headers: {

@@ -15,7 +15,7 @@
 </template>
 
 <script lang="js">
-import BaseListItem from "@/components/Base/BaseListItem.vue";
+import BaseListItem from '@/components/Base/BaseListItem.vue';
 
 export default {
   name: 'LegalAccordion',

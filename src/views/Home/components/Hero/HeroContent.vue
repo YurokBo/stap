@@ -14,7 +14,7 @@
 </template>
 
 <script lang="js">
-import HeroCards from "@/views/Home/components/Hero/HeroCards.vue";
+import HeroCards from '@/views/Home/components/Hero/HeroCards.vue';
 
 export default {
   name: 'HeroContent',

@@ -21,20 +21,20 @@
 </template>
 
 <script>
-import HeroCards from "@/views/Home/components/Hero/HeroCards.vue";
+import HeroCards from '@/views/Home/components/Hero/HeroCards.vue';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     HeroCards,
-    Benefits: () => import("@/views/Home/components/Benefits/Benefits.vue"),
+    Benefits: () => import('@/views/Home/components/Benefits/Benefits.vue'),
     Description: () =>
-      import("@/views/Home/components/Description/Description.vue"),
-    HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
-    About: () => import("@/views/Home/components/About/About.vue"),
-    Hero: () => import("@/views/Home/components/Hero/Hero.vue"),
-    Modules: () => import("@/views/Home/components/Modules/Modules.vue"),
-    Legal: () => import("@/views/Home/components/Legal/Legal.vue"),
+      import('@/views/Home/components/Description/Description.vue'),
+    HowWorks: () => import('@/views/Home/components/HowWorks/HowWorks.vue'),
+    About: () => import('@/views/Home/components/About/About.vue'),
+    Hero: () => import('@/views/Home/components/Hero/Hero.vue'),
+    Modules: () => import('@/views/Home/components/Modules/Modules.vue'),
+    Legal: () => import('@/views/Home/components/Legal/Legal.vue'),
   },
 };
 </script>

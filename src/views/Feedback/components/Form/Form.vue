@@ -40,8 +40,8 @@
 </template>
 
 <script lang="js">
-import BaseLine from "@/components/Base/BaseLine.vue";
-import FormBlock from "@/views/Feedback/components/Form/FormBlock.vue";
+import BaseLine from '@/components/Base/BaseLine.vue';
+import FormBlock from '@/views/Feedback/components/Form/FormBlock.vue';
 
 export default {
   name: 'Form',

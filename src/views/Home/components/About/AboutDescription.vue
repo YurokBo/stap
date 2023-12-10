@@ -27,7 +27,7 @@
 
 <script lang="js">
 export default {
-  name: "AboutDescription",
+  name: 'AboutDescription',
   data: () => ({
     textBefore: [
       'Хаотичные процессы',

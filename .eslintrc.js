@@ -3,29 +3,30 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: "plugin:vue/vue3-essential",
+  extends: 'plugin:vue/vue3-essential',
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: "script",
+        sourceType: 'script',
       },
     },
   ],
-  parser: "vue-eslint-parser",
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: "babel-eslint",
+    parser: 'babel-eslint',
     ecmaVersion: 6,
-    sourceType: "module",
+    sourceType: 'module',
     allowImportExportEverywhere: true,
   },
-  plugins: ["vue"],
+  plugins: ['vue'],
   rules: {
-    "vue/multi-word-component-names": "off",
-    "vue/no-deprecated-v-on-native-modifier": "off",
-    "vue/no-reserved-component-names": "off",
+    'vue/multi-word-component-names': 'off',
+    'vue/no-deprecated-v-on-native-modifier': 'off',
+    'vue/no-reserved-component-names': 'off',
+    quotes: [2, 'single', { avoidEscape: true }],
   },
 };

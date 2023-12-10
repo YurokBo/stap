@@ -31,7 +31,7 @@
 </template>
 
 <script lang="js">
-import BaseNumber from "@/components/Base/BaseNumber.vue";
+import BaseNumber from '@/components/Base/BaseNumber.vue';
 
 export default {
   name: 'DescriptionAccordion',

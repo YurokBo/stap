@@ -32,9 +32,9 @@
 </template>
 
 <script lang="js">
-import BaseButton from "@/components/Base/BaseButton.vue";
-import BasePeriod from "@/components/Base/BasePeriod.vue";
-import BaseNumber from "@/components/Base/BaseNumber.vue";
+import BaseButton from '@/components/Base/BaseButton.vue';
+import BasePeriod from '@/components/Base/BasePeriod.vue';
+import BaseNumber from '@/components/Base/BaseNumber.vue';
 
 export default {
   name: 'HowWorksCard',

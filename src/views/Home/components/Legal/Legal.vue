@@ -42,11 +42,11 @@
 </template>
 
 <script lang="js">
-import BaseLine from "@/components/Base/BaseLine.vue";
-import BaseInlineTabs from "@/components/Base/BaseInlineTabs.vue";
-import BaseTabs from "@/components/Base/BaseTabs.vue";
-import BaseListItem from "@/components/Base/BaseListItem.vue";
-import BaseButton from "@/components/Base/BaseButton.vue";
+import BaseLine from '@/components/Base/BaseLine.vue';
+import BaseInlineTabs from '@/components/Base/BaseInlineTabs.vue';
+import BaseTabs from '@/components/Base/BaseTabs.vue';
+import BaseListItem from '@/components/Base/BaseListItem.vue';
+import BaseButton from '@/components/Base/BaseButton.vue';
 
 export default {
   name: 'Legal',

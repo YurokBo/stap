@@ -22,10 +22,10 @@
 </template>
 
 <script lang="js">
-import Logo from "@/components/Logo/Logo.vue";
-import NavLinks from "@/components/Navigation/NavLinks.vue";
-import NavText from "@/components/Navigation/NavText.vue";
-import NavMenuMobile from "@/components/Navigation/NavMenuMobile.vue";
+import Logo from '@/components/Logo/Logo.vue';
+import NavLinks from '@/components/Navigation/NavLinks.vue';
+import NavText from '@/components/Navigation/NavText.vue';
+import NavMenuMobile from '@/components/Navigation/NavMenuMobile.vue';
 
 export default {
   name: 'NavMenu',

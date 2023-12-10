@@ -20,7 +20,7 @@
 
 <script lang="js">
 export default {
-  name: "BaseInlineTabs",
+  name: 'BaseInlineTabs',
   props: {
     tabs: {
       type: Array,

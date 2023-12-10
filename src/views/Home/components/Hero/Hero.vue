@@ -17,8 +17,8 @@
 </template>
 
 <script lang="js">
-import HeroContent from "@/views/Home/components/Hero/HeroContent.vue";
-import HeroAnimation from "@/views/Home/components/Hero/HeroAnimation.vue";
+import HeroContent from '@/views/Home/components/Hero/HeroContent.vue';
+import HeroAnimation from '@/views/Home/components/Hero/HeroAnimation.vue';
 
 export default {
   name: 'Hero',

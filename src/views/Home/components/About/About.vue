@@ -24,9 +24,9 @@
 
 <script lang="js">
 
-import BaseButton from "@/components/Base/BaseButton.vue";
-import AboutDescription from "@/views/Home/components/About/AboutDescription.vue";
-import AboutDescriptionMobile from "@/views/Home/components/About/AboutDescriptionMobile.vue";
+import BaseButton from '@/components/Base/BaseButton.vue';
+import AboutDescription from '@/views/Home/components/About/AboutDescription.vue';
+import AboutDescriptionMobile from '@/views/Home/components/About/AboutDescriptionMobile.vue';
 
 export default {
   name: 'About',

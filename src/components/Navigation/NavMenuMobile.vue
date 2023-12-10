@@ -10,7 +10,7 @@
 </template>
 
 <script lang="js">
-import NavLinks from "@/components/Navigation/NavLinks.vue";
+import NavLinks from '@/components/Navigation/NavLinks.vue';
 
 export default {
   name: 'NavMenuMobile',

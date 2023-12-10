@@ -6,7 +6,7 @@
 
 <script lang="ts">
 export default {
-  name: "HeroCard",
+  name: 'HeroCard',
   props: {
     text: {
       type: String,

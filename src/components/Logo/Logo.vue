@@ -5,10 +5,10 @@
 </template>
 
 <script lang="js">
-import BaseIcon from "@/components/Base/BaseIcon.vue";
+import BaseIcon from '@/components/Base/BaseIcon.vue';
 
 export default {
-  name: "Logo",
+  name: 'Logo',
   components: { BaseIcon },
 }
 </script>

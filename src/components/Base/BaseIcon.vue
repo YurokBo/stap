@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import sprite from "@/assets/img/icons/icons-sprite.svg";
+import sprite from '@/assets/img/icons/icons-sprite.svg';
 
 export default {
-  name: "BaseIcon",
+  name: 'BaseIcon',
   props: {
     name: {
       type: String,

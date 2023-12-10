@@ -17,7 +17,7 @@
 
 <script lang="js">
 export default {
-  name: "AboutDescriptionMobile",
+  name: 'AboutDescriptionMobile',
   data: () => ({
     listBefore: [
         'Хаотичные процессы',

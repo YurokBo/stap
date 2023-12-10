@@ -31,9 +31,9 @@
 </template>
 
 <script lang="js">
-import BaseLine from "@/components/Base/BaseLine.vue";
-import HowWorksCard from "@/views/Home/components/HowWorks/HowWorksCard.vue";
-import BaseButton from "@/components/Base/BaseButton.vue";
+import BaseLine from '@/components/Base/BaseLine.vue';
+import HowWorksCard from '@/views/Home/components/HowWorks/HowWorksCard.vue';
+import BaseButton from '@/components/Base/BaseButton.vue';
 
 export default {
   name: 'HowWorks',

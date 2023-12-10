@@ -48,10 +48,10 @@
 </template>
 
 <script lang="js">
-import BaseLine from "@/components/Base/BaseLine.vue";
-import BaseInlineTabs from "@/components/Base/BaseInlineTabs.vue";
-import ModulesCard from "@/views/Home/components/Modules/ModulesCard.vue";
-import BaseButton from "@/components/Base/BaseButton.vue";
+import BaseLine from '@/components/Base/BaseLine.vue';
+import BaseInlineTabs from '@/components/Base/BaseInlineTabs.vue';
+import ModulesCard from '@/views/Home/components/Modules/ModulesCard.vue';
+import BaseButton from '@/components/Base/BaseButton.vue';
 
 export default {
   name: 'Modules.vue',

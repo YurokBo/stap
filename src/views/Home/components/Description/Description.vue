@@ -65,11 +65,11 @@
 </template>
 
 <script lang="js">
-import BaseLine from "@/components/Base/BaseLine.vue";
-import BaseTabs from "@/components/Base/BaseTabs.vue";
-import BaseNumber from "@/components/Base/BaseNumber.vue";
-import DescriptionCard from "@/views/Home/components/Description/DescriptionCard.vue";
-import DescriptionAccordion from "@/views/Home/components/Description/DescriptionAccordion.vue";
+import BaseLine from '@/components/Base/BaseLine.vue';
+import BaseTabs from '@/components/Base/BaseTabs.vue';
+import BaseNumber from '@/components/Base/BaseNumber.vue';
+import DescriptionCard from '@/views/Home/components/Description/DescriptionCard.vue';
+import DescriptionAccordion from '@/views/Home/components/Description/DescriptionAccordion.vue';
 
 export default {
   name: 'Description',
