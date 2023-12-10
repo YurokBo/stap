@@ -1,56 +1,56 @@
 <template>
-  <header class="header">
-    <div class="wrap header__wrap">
-      <div class="header__inner">
-        <HeaderContent />
-        <HeaderAnimation />
+  <section class="hero">
+    <div class="wrap hero__wrap">
+      <div class="hero__inner">
+        <HeroContent />
+        <HeroAnimation />
         <img
           v-for="(image, i) in images"
           :key="i"
-          :src="require(`@/assets/img/header/${image.img}`)"
+          :src="require(`@/assets/img/hero/${image.img}`)"
           :alt="image.alt"
           :class="image.class"
         />
       </div>
     </div>
-  </header>
+  </section>
 </template>
 
 <script lang="js">
-import HeaderContent from "@/views/Home/components/Header/HeaderContent.vue";
-import HeaderAnimation from "@/views/Home/components/Header/HeaderAnimation.vue";
+import HeroContent from "@/views/Home/components/Hero/HeroContent.vue";
+import HeroAnimation from "@/views/Home/components/Hero/HeroAnimation.vue";
 
 export default {
-  name: 'Header',
-  components: { HeaderAnimation, HeaderContent },
+  name: 'Hero',
+  components: { HeroAnimation, HeroContent },
   data: () => ({
     images: [
-      {img: 'ufo.png', class: 'header__img-ufo', alt: 'ufo'},
-      {img: 'ufo-mobile.png', class: 'header__img-ufo_mobile', alt: 'ufo'},
-      {img: 'hand2.png', class: 'header__hand', alt: 'hand2'},
-      {img: 'vertical-light.svg', class: 'header__vertical-light', alt: 'vertical-light'},
-      {img: 'dust.png', class: 'header__dust', alt: 'dust'},
-      {img: 'ellipse-light.svg', class: 'header__ellipse-light', alt: 'ellipse-light'},
+      {img: 'ufo.png', class: 'hero__img-ufo', alt: 'ufo'},
+      {img: 'ufo-mobile.png', class: 'hero__img-ufo_mobile', alt: 'ufo'},
+      {img: 'hand2.png', class: 'hero__hand', alt: 'hand2'},
+      {img: 'vertical-light.svg', class: 'hero__vertical-light', alt: 'vertical-light'},
+      {img: 'dust.png', class: 'hero__dust', alt: 'dust'},
+      {img: 'ellipse-light.svg', class: 'hero__ellipse-light', alt: 'ellipse-light'},
     ]
   })
 }
 </script>
 
 <style lang="scss">
-.header {
+.hero {
   padding: 111px 0 0;
 
   &__inner {
     position: relative;
     padding: 66px 17px 17px;
-    background-image: url(~@/assets/img/common-header-bg-mobile.png);
+    background-image: url(~@/assets/img/common-hero-bg-mobile.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
 
     @media (min-width: $screen-l) {
       padding: 45px 45px 66px 54px;
-      background-image: url(~@/assets/img/common-header-bg.png);
+      background-image: url(~@/assets/img/common-hero-bg.png);
     }
   }
 

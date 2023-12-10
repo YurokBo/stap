@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-menu" :class="{ 'nav-menu_bg': isScrolled }">
+  <header class="nav-menu" :class="{ 'nav-menu_bg': isScrolled }">
     <div class="wrap nav-menu__wrap">
       <div class="nav-menu__logo">
         <Logo />
@@ -18,7 +18,7 @@
       :class="{ 'nav-menu-mobile_active': isOpen }"
       @closeMenu="openMobileMenu"
     />
-  </div>
+  </header>
 </template>
 
 <script lang="js">

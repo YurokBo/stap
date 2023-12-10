@@ -1,14 +1,14 @@
 <template>
   <main class="home">
-    <Header />
-    <div class="home__header-cards">
+    <Hero />
+    <div class="home__hero-cards">
       <img
         src="@/assets/img/hand-click.png"
         alt="hand"
-        class="home__header-cards__img"
+        class="home__hero-cards__img"
       />
-      <div class="wrap home__header-cards__wrap">
-        <HeaderCards class="home__header-cards__cards" />
+      <div class="wrap home__hero-cards__wrap">
+        <HeroCards class="home__hero-cards__cards" />
       </div>
     </div>
     <About />
@@ -21,18 +21,18 @@
 </template>
 
 <script>
-import HeaderCards from "@/views/Home/components/Header/HeaderCards.vue";
+import HeroCards from "@/views/Home/components/Hero/HeroCards.vue";
 
 export default {
   name: "Home",
   components: {
-    HeaderCards,
+    HeroCards,
     Benefits: () => import("@/views/Home/components/Benefits/Benefits.vue"),
     Description: () =>
       import("@/views/Home/components/Description/Description.vue"),
     HowWorks: () => import("@/views/Home/components/HowWorks/HowWorks.vue"),
     About: () => import("@/views/Home/components/About/About.vue"),
-    Header: () => import("@/views/Home/components/Header/Header.vue"),
+    Hero: () => import("@/views/Home/components/Hero/Hero.vue"),
     Modules: () => import("@/views/Home/components/Modules/Modules.vue"),
     Legal: () => import("@/views/Home/components/Legal/Legal.vue"),
   },
@@ -40,7 +40,7 @@ export default {
 </script>
 <style lang="scss">
 .home {
-  &__header-cards {
+  &__hero-cards {
     position: relative;
 
     @media (min-width: $screen-l) {

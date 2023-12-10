@@ -1,5 +1,5 @@
 <template>
-  <header class="feedback-header">
+  <section class="feedback-header">
     <div class="wrap">
       <div class="feedback-header__inner">
         <h1 class="title title_h2 feedback-header__title">
@@ -17,7 +17,7 @@
         <FeedbackHeaderList class="feedback-header__list"/>
       </div>
     </div>
-  </header>
+  </section>
 </template>
 
 <script lang="js">
@@ -38,14 +38,14 @@ export default {
   &__inner {
     position: relative;
     padding: 25px 13px 105px 30px;
-    background-image: url(~@/assets/img/common-header-bg-mob2.png);
+    background-image: url(~@/assets/img/common-hero-bg-mob2.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
 
     @media (min-width: $screen-l) {
       padding: 55px 31px 93px 51px;
-      background-image: url(~@/assets/img/common-header-bg.png);
+      background-image: url(~@/assets/img/common-hero-bg.png);
     }
   }
 

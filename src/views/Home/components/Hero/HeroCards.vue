@@ -1,16 +1,16 @@
 <template>
   <div class="header-cards">
-    <HeaderCard v-for="(text, i) in cards" :key="i" :text="text" />
+    <HeroCard v-for="(text, i) in cards" :key="i" :text="text" />
   </div>
 </template>
 
 <script lang="js">
 
-import HeaderCard from "@/views/Home/components/Header/HeaderCard.vue";
+import HeroCard from "@/views/Home/components/Hero/HeroCard.vue";
 
 export default {
-  name: 'HeaderCards',
-  components: { HeaderCard },
+  name: 'HeroCards',
+  components: { HeroCard },
   data: () => ({
     cards: [
       'Для компаний от <span class="colored-el">500 сотрудников</span> любой специализации',

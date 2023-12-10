@@ -1,12 +1,12 @@
 <template>
-  <div class="header-card">
+  <div class="hero-card">
     <p class="text" v-html="text" />
   </div>
 </template>
 
 <script lang="ts">
 export default {
-  name: "HeaderCard",
+  name: "HeroCard",
   props: {
     text: {
       type: String,
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
+.hero {
   &-card {
     display: flex;
     justify-content: center;
@@ -25,7 +25,7 @@ export default {
     width: 207px;
     height: 109px;
     padding: 20px 12px;
-    background-image: url("~@/assets/img/header/header-card-bg.png");
+    background-image: url("~@/assets/img/hero/hero-card-bg.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100% 100%;

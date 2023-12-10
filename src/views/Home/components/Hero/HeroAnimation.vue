@@ -1,7 +1,7 @@
 <template>
-  <div class="header-animation">
-    <div class="header-animation__content">
-      <img src="@/assets/img/header/central.png" alt="central" class="center" />
+  <div class="hero-animation">
+    <div class="hero-animation__content">
+      <img src="@/assets/img/hero/central.png" alt="central" class="center" />
       <div
         v-for="(text, i) in texts"
         :key="i"
@@ -11,7 +11,7 @@
         <div class="text-block__content">
           <p v-html="text" />
           <img
-            :src="require(`@/assets/img/header/text-block${i + 1}.svg`)"
+            :src="require(`@/assets/img/hero/text-block${i + 1}.svg`)"
             alt="text border"
           />
         </div>
@@ -19,7 +19,7 @@
       <img
         v-for="(_, i) in 4"
         :key="i + 'A'"
-        :src="require(`@/assets/img/header/elem${i + 1}.png`)"
+        :src="require(`@/assets/img/hero/elem${i + 1}.png`)"
         alt="elem"
         class="elem"
         :class="`elem${i + 1}`"
@@ -29,7 +29,7 @@
         обеспечение
       </p>
       <img
-        src="@/assets/img/header/center-light.svg"
+        src="@/assets/img/hero/center-light.svg"
         alt="center light"
         class="center-light"
       />
@@ -39,7 +39,7 @@
 
 <script lang="js">
 export default {
-  name: 'HeaderAnimation',
+  name: 'HeroAnimation',
   data: () => ({
     texts: [
       'процессы',
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
-.header-animation {
+.hero-animation {
   position: absolute;
   z-index: 3;
   bottom: 120px;

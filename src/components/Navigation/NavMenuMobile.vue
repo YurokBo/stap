@@ -1,12 +1,12 @@
 <template>
-  <div class="nav-menu-mobile">
+  <header class="nav-menu-mobile">
     <div class="wrap">
       <NavLinks
         class="nav-menu-mobile__links"
         @closeMenu="$emit('closeMenu')"
       />
     </div>
-  </div>
+  </header>
 </template>
 
 <script lang="js">
