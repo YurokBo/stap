@@ -28,12 +28,16 @@
         class="about-description__arrow"
       />
     </div>
-    <AboutTranscript />
+    <div ref="aboutTranscriptRef" class="about-description__animation">
+      <AboutTranscript />
+    </div>
   </div>
 </template>
 
 <script lang="js">
 import AboutTranscript from '@/views/Home/components/About/AboutTranscript.vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default {
   name: 'AboutDescription',
@@ -52,6 +56,34 @@ export default {
       'Быстрые средства коммуникации',
     ],
   }),
+  mounted() {
+    gsap.registerPlugin(ScrollTrigger)
+    this.initAnimation();
+  },
+  methods: {
+    initAnimation() {
+      const animateElement = this.$refs.aboutTranscriptRef;
+
+      const enterAnimation = gsap.from(animateElement, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+      });
+
+      ScrollTrigger.create({
+        trigger: animateElement,
+        start: 'top bottom',
+        end: 'bottom top',
+        toggleActions: 'play none none none',
+        onEnter: () => {
+          enterAnimation.restart();
+        },
+        onLeaveBack: () => {
+          enterAnimation.reverse();
+        },
+      });
+    },
+  }
 }
 </script>
 
@@ -62,6 +94,10 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 77px 0 55px;
+
+  &__animation {
+    opacity: 1;
+  }
 
   &__content {
     position: relative;

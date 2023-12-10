@@ -10,8 +10,6 @@
 </template>
 
 <script lang="js">
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export default {
   name: 'AboutTranscript',
   data: () => ({
@@ -22,36 +20,8 @@ export default {
       'охраны',
       'труда',
     ],
-    initEl: null,
   }),
-  mounted() {
-    gsap.registerPlugin(ScrollTrigger)
-    this.initAnimation();
-  },
   methods: {
-    initAnimation() {
-      const animateElement = this.$refs.aboutTranscriptRef;
-
-      const enterAnimation = gsap.from(animateElement, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-      });
-
-      ScrollTrigger.create({
-        trigger: animateElement,
-        start: 'top bottom',
-        end: 'bottom top',
-        toggleActions: 'play none none none',
-        markers: true,
-        onEnter: () => {
-          enterAnimation.restart();
-        },
-        onLeaveBack: () => {
-          enterAnimation.reverse();
-        },
-      });
-    },
     formatText(text) {
       const firstLetter = text.charAt(0);
       const restText = text.slice(1)
@@ -67,8 +37,11 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 70px;
-  opacity: 1;
+  margin: 0 0 40px;
+
+  @media (min-width: $screen-l) {
+    margin-top: 70px;
+  }
 
   &__item {
     display: flex;

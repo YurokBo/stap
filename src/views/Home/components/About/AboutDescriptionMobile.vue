@@ -1,5 +1,6 @@
 <template>
   <div class="about-description-mobile">
+    <AboutTranscript />
     <img src="@/assets/img/about/about-img-mobile.svg" alt="about-img" />
     <ul class="about-description-mobile__list">
       <li v-for="(_, i) in 4" :key="i" class="about-description-mobile__item">
@@ -16,8 +17,11 @@
 </template>
 
 <script lang="js">
+import AboutTranscript from '@/views/Home/components/About/AboutTranscript.vue';
+
 export default {
   name: 'AboutDescriptionMobile',
+  components: { AboutTranscript },
   data: () => ({
     listBefore: [
         'Хаотичные процессы',
