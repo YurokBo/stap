@@ -30,7 +30,7 @@
             оценку бизнеса в отношении автоматизации, на вес золота.
           </p>
           <p class="text_large text_bold form__item form__item_bg">
-            В STAP работают 2 таких эксперта:
+            В STAP работают 2 таких эксперта.
           </p>
         </div>
         <FormBlock />

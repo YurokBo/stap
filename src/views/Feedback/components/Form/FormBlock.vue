@@ -22,17 +22,11 @@
               />
             </div>
             <div class="form-block__field">
-              <span v-if="isError('link')" class="form-block__field__error">
-                Введите сайт или соцсети
-              </span>
               <input
                 type="text"
                 name="link"
-                placeholder="Сайт или соцсети компании *"
+                placeholder="Сайт или соцсети компании"
                 v-model.trim="formData.link"
-                :class="{
-                  'input-error': isError('link'),
-                }"
               />
             </div>
           </div>
@@ -162,9 +156,6 @@ export default {
   validations: {
     formData: {
       company: {
-        required,
-      },
-      link: {
         required,
       },
       name: {

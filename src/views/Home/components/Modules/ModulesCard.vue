@@ -1,6 +1,7 @@
 <template>
   <div class="modules-card">
-    {{ text }}
+<!--    {{ text }}-->
+    <p v-html="text"></p>
     <img
       :src="require(`@/assets/img/modules/${iconPath}/${index + 1}.png`)"
       alt="module icon"
@@ -68,6 +69,10 @@ export default {
     background-color: var(--color-bg-light-blue);
     transform: skew(-30deg);
     box-shadow: 9px -12px 23px -6px rgba(0, 0, 0, 0.4);
+  }
+
+  > p {
+    letter-spacing: 1px;
   }
 
   > img {

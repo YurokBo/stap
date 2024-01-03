@@ -1,4 +1,4 @@
-# stap
+# STAP
 
 ## Project setup
 ```

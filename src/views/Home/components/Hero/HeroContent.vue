@@ -25,7 +25,7 @@ export default {
 <style lang="scss">
 .hero-content {
   &__title {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     text-align: center;
 
     @media (min-width: $screen-l) {
@@ -35,8 +35,9 @@ export default {
   }
 
   &__subtitle {
-    margin-bottom: 344px;
+    margin-bottom: 354px;
     text-align: center;
+    letter-spacing: 0.5px;
 
     @media (min-width: $screen-l) {
       margin-bottom: 45px;

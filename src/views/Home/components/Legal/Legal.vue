@@ -207,6 +207,11 @@ export default {
     @media (min-width: $screen-l) {
       left: 100%;
       transform: translateX(-130%);
+
+      &:hover {
+        transform: translateX(-137%);
+        scale: 0.95;
+      }
     }
   }
 }

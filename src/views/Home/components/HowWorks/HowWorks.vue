@@ -198,6 +198,11 @@ export default {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+
+    &:hover {
+      transform: translateX(-53%);
+      scale: 0.95;
+    }
   }
 }
 </style>

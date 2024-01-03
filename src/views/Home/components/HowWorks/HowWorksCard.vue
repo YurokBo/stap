@@ -1,7 +1,7 @@
 <template>
   <div class="how-works-card" @click="showContent">
     <div class="how-works-card__header">
-      <BaseNumber :number="number" />
+      <BaseNumber :number="number" class="how-works-card__header-number" />
       <BasePeriod :text="period" />
     </div>
     <p class="text text_medium how-works-card__text">
@@ -82,11 +82,19 @@ export default {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-    padding: 32px 26px 30px 40px;
+    padding: 32px 22px 30px 18px;
     background-image: url("~@/assets/img/how-works/card-bg.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     background-size: contain;
+
+    @media (min-width: $screen-l) {
+      padding: 32px 26px 30px 40px;
+    }
+  }
+
+  &__header-number {
+    font-size: 52px;
   }
 
   &__text {

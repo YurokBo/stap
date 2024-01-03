@@ -63,9 +63,13 @@ export default {
 
     > p {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      white-space: nowrap;
+      letter-spacing: .6px;
+
+      @media (min-width: $screen-l) {
+        flex-wrap: wrap;
+        white-space: nowrap;
+      }
 
       > img {
         margin: 0 12px;

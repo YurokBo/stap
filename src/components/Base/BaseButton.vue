@@ -14,7 +14,7 @@
       <img src="@/assets/img/fingerprint.png" alt="fingerprint" />
     </div>
     <img
-      v-if="isShine"
+      v-if="isShine && false"
       src="@/assets/img/shine.png"
       alt="shine"
       class="base-button__shine"
@@ -83,6 +83,7 @@ export default {
 
   &__text {
     text-align: center;
+    letter-spacing: 0.5px;
   }
 
   &__img {
