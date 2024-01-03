@@ -67,7 +67,7 @@ export default {
       const enterAnimation = gsap.from(animateElement, {
         opacity: 0,
         y: 50,
-        duration: 1,
+        duration: 1.5,
       });
 
       ScrollTrigger.create({
