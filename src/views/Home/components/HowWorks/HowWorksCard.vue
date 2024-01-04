@@ -94,7 +94,7 @@ export default {
   }
 
   &__header-number {
-    font-size: 52px;
+    font-size: 52px !important;
   }
 
   &__text {
