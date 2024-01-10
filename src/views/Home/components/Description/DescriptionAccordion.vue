@@ -1,24 +1,29 @@
 <template>
-  <div class="description-accordion">
+  <div ref="accordionRef" class="description-accordion">
     <button
       class="text_large description-accordion__head"
-      :class="{ 'description-accordion__head_active': isOpen }"
+      :class="{ 'description-accordion__head_active': isShowContent }"
       v-html="title"
-      @click="isOpen = !isOpen"
+      @click="showContent"
     />
     <transition name="slide-fade">
-      <div v-show="isOpen" class="description-accordion__body">
-        <img
-          src="@/assets/img/description/ruler-small.svg"
-          alt="ruler"
-          class="description-accordion__ruler"
-        />
+      <div v-show="isShowContent" class="description-accordion__body">
+<!--        <img-->
+<!--          src="@/assets/img/description/ruler-small.svg"-->
+<!--          alt="ruler"-->
+<!--          class="description-accordion__ruler"-->
+<!--        />-->
         <ul class="description-accordion__list">
           <li
             v-for="(item, i) in content"
             :key="i"
             class="description-accordion__item"
           >
+            <img
+              src="@/assets/img/description/ruler-part-small.svg"
+              alt="ruler"
+              class="description-accordion__ruler"
+            />
             <BaseNumber :is-size-large="false" :number="i + 1" />
             <p class="text">
               {{ item }}
@@ -47,8 +52,24 @@ export default {
     },
   },
   data: () => ({
-      isOpen: false,
+    isShowContent: false,
   }),
+  mounted() {
+    document.addEventListener('click', this.closeOutside);
+  },
+  beforeUnmount() {
+    document.removeEventListener('click', this.closeOutside);
+  },
+  methods: {
+    showContent() {
+      this.isShowContent = !this.isShowContent;
+    },
+    closeOutside(event) {
+      if (this.isShowContent && this.$refs.accordionRef && !this.$refs.accordionRef.contains(event.target)) {
+        this.isShowContent = false;
+      }
+    }
+  }
 }
 </script>
 
@@ -94,7 +115,7 @@ export default {
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 0;
   }
 
   &__item {
@@ -102,10 +123,6 @@ export default {
     gap: 10px;
     align-items: center;
     font-size: 14px;
-
-    &:first-child {
-      margin-top: 6px;
-    }
   }
 }
 </style>
