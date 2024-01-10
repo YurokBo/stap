@@ -21,7 +21,7 @@
           :icon="icon"
           class="footer__socials"
         />
-        <router-link to="/" class="footer__links__policy">
+        <router-link to="/privacy" target="_blank" class="footer__policy">
           Политика конфиденциальности
         </router-link>
       </div>
@@ -39,9 +39,9 @@ export default {
   components: { FooterSocials, RequisitesText, Logo },
   data: () => ({
     links: [
-      {icon: 'vk', href: '#'},
-      {icon: 'tg', href: '#'},
-      {icon: 'in', href: '#'},
+      { icon: 'vk', href: '#' },
+      { icon: 'tg', href: '#' },
+      { icon: 'in', href: '#' },
     ]
   })
 }
@@ -88,11 +88,15 @@ export default {
     margin-right: 52px;
   }
 
-  &__links {
-    &__policy {
-      font-size: 14px;
-      @media (min-width: $screen-l) {
-        margin-left: 53px;
+  &__policy {
+    font-size: 14px;
+
+    @media (min-width: $screen-l) {
+      margin-left: 53px;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: var(--color-light-blue);
       }
     }
   }
