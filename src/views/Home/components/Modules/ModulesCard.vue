@@ -1,6 +1,5 @@
 <template>
   <div class="modules-card">
-<!--    {{ text }}-->
     <p v-html="text"></p>
     <img
       :src="require(`@/assets/img/modules/${iconPath}/${index + 1}.png`)"
@@ -45,7 +44,7 @@ export default {
   font-family: $font-family-micra;
   font-size: 14px;
   font-weight: 400;
-  line-height: 2.18;
+  line-height: 1.9;
 
   @media (min-width: $screen-l) {
     flex-direction: row;
@@ -78,7 +77,7 @@ export default {
   > img {
     width: 55px;
     height: 55px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     @media (min-width: $screen-l) {
       position: absolute;

@@ -159,6 +159,8 @@ export default {
   &__text {
     padding: 27px 0 37px;
     font-size: 14px;
+    letter-spacing: 0.6px;
+    line-height: 1.3;
 
     @media (min-width: $screen-l) {
       padding: 48px 0 57px;
