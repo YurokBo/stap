@@ -204,7 +204,11 @@ export default {
     }
 
     .base-button__shine {
-      bottom: -186px;
+      bottom: -121px;
+
+      @media (min-width: $screen-l) {
+        bottom: -186px;
+      }
     }
   }
 }

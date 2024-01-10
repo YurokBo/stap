@@ -184,7 +184,7 @@ export default {
       margin-bottom: 62px;
     }
 
-    @media (min-width: $screen-l) {
+    @media (min-width: $screen-xl) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -200,7 +200,11 @@ export default {
     }
 
     .base-button__shine {
-      bottom: -203px;
+      bottom: -133px;
+
+      @media (min-width: $screen-l) {
+        bottom: -203px;
+      }
     }
   }
 }

@@ -123,8 +123,8 @@ export default {
 
   &__shine {
     position: absolute;
-    bottom: 6px;
-    left: -0;
+    bottom: -124px;
+    left: -20px;
     pointer-events: none;
     transition: all 0.3s ease-in-out;
 
