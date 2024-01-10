@@ -213,6 +213,10 @@ export default {
         scale: 0.95;
       }
     }
+
+    .base-button__shine {
+      bottom: -185px;
+    }
   }
 }
 </style>

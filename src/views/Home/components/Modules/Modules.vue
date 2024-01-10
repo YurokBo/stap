@@ -202,6 +202,10 @@ export default {
         font-size: 32px;
       }
     }
+
+    .base-button__shine {
+      bottom: -186px;
+    }
   }
 }
 </style>

@@ -14,17 +14,23 @@
       <img src="@/assets/img/fingerprint.png" alt="fingerprint" />
     </div>
     <img
-      v-if="isShine && false"
-      src="@/assets/img/shine.png"
+      v-if="isShine"
+      src="@/assets/img/button-shine@2x.png"
       alt="shine"
       class="base-button__shine"
     />
+    <div v-if="false" class="base-button__shine">
+      <ButtonShine />
+    </div>
   </router-link>
 </template>
 
 <script lang="js">
+import ButtonShine from '@/components/Base/ButtonShine.vue';
+
 export default {
   name: 'BaseButton',
+  components: { ButtonShine },
   props: {
     text: {
       type: String,
@@ -117,13 +123,13 @@ export default {
 
   &__shine {
     position: absolute;
-    bottom: -48px;
+    bottom: 6px;
     left: -0;
     pointer-events: none;
     transition: all 0.3s ease-in-out;
 
     @media (min-width: $screen-l) {
-      bottom: -73px;
+      bottom: -190px;
       left: -91px;
     }
   }
