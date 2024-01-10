@@ -11,7 +11,7 @@
     />
     <div class="wrap about__wrap">
       <p class="text_large text_bold about__title">
-        <span class="colored-el">АИСОТ</span> - Это решения для автоматизации
+        <span class="colored-el">АИСОТ</span> - это решения для автоматизации
         процессов охраны труда, промышленной и пожарной безопасности, экологии и
         других взамосвязанных направлений
       </p>

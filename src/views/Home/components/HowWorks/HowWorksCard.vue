@@ -1,5 +1,5 @@
 <template>
-  <div class="how-works-card" @click="showContent">
+  <div ref="cardRef" class="how-works-card" @click="showContent">
     <div class="how-works-card__header">
       <BaseNumber :number="number" class="how-works-card__header-number" />
       <BasePeriod :text="period" />
@@ -15,16 +15,25 @@
     />
     <transition name="fade">
       <div v-show="isShowContent" class="how-works-card__content">
-        <ul class="text text_medium how-works-card__content__infos">
-          <li v-for="(info, i) in infos" :key="i">
-            {{ info }}
+        <p class="text text_medium">
+          {{ info }}
+        </p>
+        <ul v-if="list" class="text text_medium how-works-card__list">
+          <li
+            v-for="(item, i) in list"
+            :key="i"
+            class="how-works-card__list-item"
+            :class="{'how-works-card__list-item_ordered': isOrdered}"
+          >
+            {{ item }}
           </li>
         </ul>
         <BaseButton
+          v-if="isButton"
           :text="'Узнать подробнее <br /> и записаться'"
           :is-finger-print="false"
           :is-shine="false"
-          class="how-works-card__content__button"
+          class="how-works-card__button"
         />
       </div>
     </transition>
@@ -52,17 +61,40 @@ export default {
       type: String,
       default: '',
     },
-    infos: {
+    info: {
+      type: String,
+      default: '',
+    },
+    list: {
       type: Array,
       default: () => [],
-    }
+    },
+    isButton: {
+      type: Boolean,
+      default: false,
+    },
+    isOrdered: {
+      type: Boolean,
+      default: false,
+    },
   },
   data: () => ({
     isShowContent: false,
   }),
+  mounted() {
+    document.addEventListener('click', this.closeOutside);
+  },
+  beforeUnmount() {
+    document.removeEventListener('click', this.closeOutside);
+  },
   methods: {
     showContent() {
       this.isShowContent = !this.isShowContent;
+    },
+    closeOutside(event) {
+      if (this.isShowContent && this.$refs.cardRef && !this.$refs.cardRef.contains(event.target)) {
+        this.isShowContent = false;
+      }
     }
   }
 }
@@ -125,30 +157,49 @@ export default {
     border-radius: 0 0 10px 10px;
     background: linear-gradient(180deg, #7bf1f1 0%, #004c7d 100%);
     color: var(--color-text-black);
+  }
 
-    &__infos {
-      margin-bottom: 33px;
+  &__list {
+    counter-reset: list-number;
+  }
 
-      > li {
-        position: relative;
-        padding-left: 25px;
+  &__list-item {
+    position: relative;
+    padding-left: 25px;
 
-        &:before {
-          content: "";
-          position: absolute;
-          top: 8px;
-          left: 12px;
-          width: 2px;
-          height: 2px;
-          background-color: var(--color-bg-dark);
-          border-radius: 50%;
-        }
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      width: 4px;
+      height: 4px;
+      background-color: var(--color-bg-dark);
+      border-radius: 50%;
+    }
+
+    &_ordered {
+      &:before {
+        counter-increment: list-number;
+        content: counter(list-number)'.';
+        position: initial;
+        top: initial;
+        left: initial;
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        border-radius: initial;
       }
     }
+  }
 
-    &__button {
-      width: 100%;
-    }
+  &__button {
+    width: 100%;
+    margin-top: 33px;
   }
 }
 </style>
